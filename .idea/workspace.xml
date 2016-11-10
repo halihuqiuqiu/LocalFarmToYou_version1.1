@@ -2,10 +2,104 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7543209a-61a8-4c6b-89d3-ef5f85693d1a" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/edu/iit/cs445/usecases/CustomerManagerTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LocalFarmToYou.iml" afterPath="$PROJECT_DIR$/LocalFarmToYou.iml" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/helloexample.war" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/helloexample/META-INF/MANIFEST.MF" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/helloexample/WEB-INF/classes/edu/iit/cs445/controller/CustomerController.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/helloexample/WEB-INF/classes/edu/iit/cs445/controller/FarmerAccountController.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/helloexample/WEB-INF/classes/edu/iit/cs445/controller/Hello.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/helloexample/WEB-INF/classes/edu/iit/cs445/controller/ManagerController.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/helloexample/WEB-INF/classes/edu/iit/cs445/database/Database.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/helloexample/WEB-INF/classes/edu/iit/cs445/entitites/Catalog.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/helloexample/WEB-INF/classes/edu/iit/cs445/entitites/CatalogID.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/helloexample/WEB-INF/classes/edu/iit/cs445/entitites/Customer.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/helloexample/WEB-INF/classes/edu/iit/cs445/entitites/CustomerID.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/helloexample/WEB-INF/classes/edu/iit/cs445/entitites/Farm.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/helloexample/WEB-INF/classes/edu/iit/cs445/entitites/Farmer.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/helloexample/WEB-INF/classes/edu/iit/cs445/entitites/FarmerAccount.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/helloexample/WEB-INF/classes/edu/iit/cs445/entitites/FarmerAccountID.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/helloexample/WEB-INF/classes/edu/iit/cs445/entitites/Order.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/helloexample/WEB-INF/classes/edu/iit/cs445/entitites/Product.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/helloexample/WEB-INF/classes/edu/iit/cs445/entitites/ProductID.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/helloexample/WEB-INF/classes/edu/iit/cs445/exception/BadRequestException.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/helloexample/WEB-INF/classes/edu/iit/cs445/exception/BadRequestExceptionMapper.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/helloexample/WEB-INF/classes/edu/iit/cs445/exception/DataNotFoundException.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/helloexample/WEB-INF/classes/edu/iit/cs445/exception/DataNotFoundExceptionMapper.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/helloexample/WEB-INF/classes/edu/iit/cs445/exception/GenericExceptionMapper.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/helloexample/WEB-INF/classes/edu/iit/cs445/usecases/CustomerManager.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/helloexample/WEB-INF/classes/edu/iit/cs445/usecases/FarmerAccountManager.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/helloexample/WEB-INF/classes/edu/iit/cs445/usecases/Manager.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/helloexample/WEB-INF/lib/aopalliance-repackaged-2.5.0-b05.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/helloexample/WEB-INF/lib/hk2-api-2.5.0-b05.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/helloexample/WEB-INF/lib/hk2-locator-2.5.0-b05.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/helloexample/WEB-INF/lib/hk2-utils-2.5.0-b05.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/helloexample/WEB-INF/lib/javassist-3.20.0-GA.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/helloexample/WEB-INF/lib/javax.annotation-api-1.2.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/helloexample/WEB-INF/lib/javax.inject-2.5.0-b05.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/helloexample/WEB-INF/lib/javax.ws.rs-api-2.0.1.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/helloexample/WEB-INF/lib/jersey-client-2.23.2.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/helloexample/WEB-INF/lib/jersey-common-2.23.2.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/helloexample/WEB-INF/lib/jersey-container-servlet-2.23.2.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/helloexample/WEB-INF/lib/jersey-container-servlet-core-2.23.2.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/helloexample/WEB-INF/lib/jersey-guava-2.23.2.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/helloexample/WEB-INF/lib/jersey-media-jaxb-2.23.2.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/helloexample/WEB-INF/lib/jersey-server-2.23.2.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/helloexample/WEB-INF/lib/osgi-resource-locator-1.0.1.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/helloexample/WEB-INF/lib/validation-api-1.1.0.Final.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/helloexample/WEB-INF/web.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/helloexample/index.jsp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/localfarm.war" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/localfarm/META-INF/MANIFEST.MF" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/localfarm/WEB-INF/classes/edu/iit/cs445/controller/CustomerController.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/localfarm/WEB-INF/classes/edu/iit/cs445/controller/FarmerAccountController.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/localfarm/WEB-INF/classes/edu/iit/cs445/controller/Hello.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/localfarm/WEB-INF/classes/edu/iit/cs445/controller/ManagerController.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/localfarm/WEB-INF/classes/edu/iit/cs445/database/Database.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/localfarm/WEB-INF/classes/edu/iit/cs445/entitites/Catalog.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/localfarm/WEB-INF/classes/edu/iit/cs445/entitites/CatalogID.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/localfarm/WEB-INF/classes/edu/iit/cs445/entitites/Customer.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/localfarm/WEB-INF/classes/edu/iit/cs445/entitites/CustomerID.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/localfarm/WEB-INF/classes/edu/iit/cs445/entitites/Farm.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/localfarm/WEB-INF/classes/edu/iit/cs445/entitites/Farmer.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/localfarm/WEB-INF/classes/edu/iit/cs445/entitites/FarmerAccount.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/localfarm/WEB-INF/classes/edu/iit/cs445/entitites/FarmerAccountID.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/localfarm/WEB-INF/classes/edu/iit/cs445/entitites/Order.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/localfarm/WEB-INF/classes/edu/iit/cs445/entitites/Product.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/localfarm/WEB-INF/classes/edu/iit/cs445/entitites/ProductID.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/localfarm/WEB-INF/classes/edu/iit/cs445/exception/BadRequestException.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/localfarm/WEB-INF/classes/edu/iit/cs445/exception/BadRequestExceptionMapper.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/localfarm/WEB-INF/classes/edu/iit/cs445/exception/DataNotFoundException.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/localfarm/WEB-INF/classes/edu/iit/cs445/exception/DataNotFoundExceptionMapper.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/localfarm/WEB-INF/classes/edu/iit/cs445/exception/GenericExceptionMapper.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/localfarm/WEB-INF/classes/edu/iit/cs445/usecases/CustomerManager.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/localfarm/WEB-INF/classes/edu/iit/cs445/usecases/FarmerAccountManager.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/localfarm/WEB-INF/classes/edu/iit/cs445/usecases/Manager.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/localfarm/WEB-INF/classes/main/webapp/WEB-INF/web.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/localfarm/WEB-INF/classes/main/webapp/index.jsp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/localfarm/WEB-INF/lib/aopalliance-repackaged-2.5.0-b05.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/localfarm/WEB-INF/lib/hk2-api-2.5.0-b05.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/localfarm/WEB-INF/lib/hk2-locator-2.5.0-b05.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/localfarm/WEB-INF/lib/hk2-utils-2.5.0-b05.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/localfarm/WEB-INF/lib/javassist-3.20.0-GA.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/localfarm/WEB-INF/lib/javax.annotation-api-1.2.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/localfarm/WEB-INF/lib/javax.inject-2.5.0-b05.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/localfarm/WEB-INF/lib/javax.json-1.0.4.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/localfarm/WEB-INF/lib/javax.ws.rs-api-2.0.1.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/localfarm/WEB-INF/lib/jersey-client-2.23.2.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/localfarm/WEB-INF/lib/jersey-common-2.23.2.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/localfarm/WEB-INF/lib/jersey-container-servlet-2.23.2.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/localfarm/WEB-INF/lib/jersey-container-servlet-core-2.23.2.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/localfarm/WEB-INF/lib/jersey-entity-filtering-2.24.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/localfarm/WEB-INF/lib/jersey-guava-2.23.2.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/localfarm/WEB-INF/lib/jersey-media-jaxb-2.23.2.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/localfarm/WEB-INF/lib/jersey-media-moxy-2.24.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/localfarm/WEB-INF/lib/jersey-server-2.23.2.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/localfarm/WEB-INF/lib/org.eclipse.persistence.asm-2.6.0.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/localfarm/WEB-INF/lib/org.eclipse.persistence.core-2.6.0.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/localfarm/WEB-INF/lib/org.eclipse.persistence.moxy-2.6.0.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/localfarm/WEB-INF/lib/osgi-resource-locator-1.0.1.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/localfarm/WEB-INF/lib/validation-api-1.1.0.Final.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/localfarm/WEB-INF/web.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/localfarm/index.jsp" afterPath="" />
     </list>
     <ignored path="HelloHelloRest.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -52,7 +146,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CustomerManagerTest.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="CustomerManagerTest.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test/edu/iit/cs445/usecases/CustomerManagerTest.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="170">
@@ -128,7 +222,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
+      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="340">
@@ -319,6 +413,20 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="target" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LocalFarmToYou_version1.1" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LocalFarmToYou_version1.1" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -361,7 +469,7 @@
       <recent name="$PROJECT_DIR$/src/main/java/edu.iit.cs445/entities" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.CustomerManagerTest">
+  <component name="RunManager" selected="Tomcat Server.hali">
     <configuration default="false" name="CustomerManagerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -934,7 +1042,7 @@
       <workItem from="1478736930656" duration="2166000" />
       <workItem from="1478740098372" duration="1013000" />
       <workItem from="1478741136983" duration="433000" />
-      <workItem from="1478741603225" duration="3716000" />
+      <workItem from="1478741603225" duration="4315000" />
     </task>
     <servers />
   </component>
@@ -942,9 +1050,15 @@
     <history-entry file="CustomerManagerTest - 2016.11.09 at 21h 19m 08s.xml">
       <configuration name="CustomerManagerTest" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="CustomerManagerTest - 2016.11.09 at 21h 32m 03s.xml">
+      <configuration name="CustomerManagerTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="CustomerManagerTest - 2016.11.09 at 21h 32m 25s.xml">
+      <configuration name="CustomerManagerTest" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="8744000" />
+    <option name="totallyTimeSpent" value="9343000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="14" y="24" width="1400" height="767" extended-state="0" />
@@ -953,7 +1067,7 @@
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3288889" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="true" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3298969" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3298969" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Statistic" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -970,7 +1084,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32740742" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2496318" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2496318" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32891566" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1310,14 +1424,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" column="16" selection-start-line="20" selection-start-column="16" selection-end-line="20" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/edu/iit/cs445/usecases/CustomerManager.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
@@ -1332,6 +1438,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
           <caret line="14" column="46" selection-start-line="14" selection-start-column="46" selection-end-line="14" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" column="16" selection-start-line="20" selection-start-column="16" selection-end-line="20" selection-end-column="16" />
           <folding />
         </state>
       </provider>
