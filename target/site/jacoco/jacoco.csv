@@ -1,0 +1,24 @@
+GROUP,PACKAGE,CLASS,INSTRUCTION_MISSED,INSTRUCTION_COVERED,BRANCH_MISSED,BRANCH_COVERED,LINE_MISSED,LINE_COVERED,COMPLEXITY_MISSED,COMPLEXITY_COVERED,METHOD_MISSED,METHOD_COVERED
+localfarm Maven Webapp,edu.iit.cs445.database,Database,22,0,0,0,7,0,5,0,5,0
+localfarm Maven Webapp,edu.iit.cs445.exception,BadRequestExceptionMapper,7,0,0,0,2,0,2,0,2,0
+localfarm Maven Webapp,edu.iit.cs445.exception,BadRequestException,3,0,0,0,1,0,1,0,1,0
+localfarm Maven Webapp,edu.iit.cs445.exception,GenericExceptionMapper,7,0,0,0,2,0,2,0,2,0
+localfarm Maven Webapp,edu.iit.cs445.exception,DataNotFoundException,3,0,0,0,1,0,1,0,1,0
+localfarm Maven Webapp,edu.iit.cs445.exception,DataNotFoundExceptionMapper,7,0,0,0,2,0,2,0,2,0
+localfarm Maven Webapp,edu.iit.cs445.entitites,Farm,46,0,0,0,20,0,10,0,10,0
+localfarm Maven Webapp,edu.iit.cs445.entitites,Catalog,26,0,0,0,12,0,6,0,6,0
+localfarm Maven Webapp,edu.iit.cs445.entitites,FarmerAccountID,16,0,0,0,8,0,4,0,4,0
+localfarm Maven Webapp,edu.iit.cs445.entitites,Product,86,0,0,0,36,0,18,0,18,0
+localfarm Maven Webapp,edu.iit.cs445.entitites,Order,3,0,0,0,1,0,1,0,1,0
+localfarm Maven Webapp,edu.iit.cs445.entitites,Customer,77,0,2,0,30,0,17,0,16,0
+localfarm Maven Webapp,edu.iit.cs445.entitites,CatalogID,16,0,0,0,8,0,4,0,4,0
+localfarm Maven Webapp,edu.iit.cs445.entitites,FarmerAccount,41,0,0,0,17,0,12,0,12,0
+localfarm Maven Webapp,edu.iit.cs445.entitites,ProductID,16,0,0,0,8,0,4,0,4,0
+localfarm Maven Webapp,edu.iit.cs445.entitites,CustomerID,16,0,0,0,8,0,4,0,4,0
+localfarm Maven Webapp,edu.iit.cs445.entitites,Farmer,36,0,0,0,16,0,8,0,8,0
+localfarm Maven Webapp,edu.iit.cs445.usecases,Manager,56,0,2,0,12,0,6,0,5,0
+localfarm Maven Webapp,edu.iit.cs445.usecases,FarmerAccountManager,6,0,0,0,2,0,1,0,1,0
+localfarm Maven Webapp,edu.iit.cs445.usecases,CustomerManager,56,0,2,0,12,0,6,0,5,0
+localfarm Maven Webapp,edu.iit.cs445.controller,CustomerController,88,0,14,0,21,0,12,0,5,0
+localfarm Maven Webapp,edu.iit.cs445.controller,ManagerController,59,0,4,0,14,0,6,0,4,0
+localfarm Maven Webapp,edu.iit.cs445.controller,FarmerAccountController,10,0,0,0,3,0,2,0,2,0

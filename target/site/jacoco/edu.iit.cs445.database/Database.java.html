@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Database.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">localfarm Maven Webapp</a> &gt; <a href="index.source.html" class="el_package">edu.iit.cs445.database</a> &gt; <span class="el_source">Database.java</span></div><h1>Database.java</h1><pre class="source lang-java linenums">package edu.iit.cs445.database;
+
+import edu.iit.cs445.entitites.Catalog;
+import edu.iit.cs445.entitites.Customer;
+import edu.iit.cs445.entitites.FarmerAccount;
+
+import java.util.HashMap;
+import java.util.Map;
+
+/**
+ * Created by YongYang on 11/6/16.
+ */
+<span class="nc" id="L13">public class Database {</span>
+<span class="nc" id="L14">    private static Map&lt;Long, Customer&gt; customers = new HashMap&lt;Long, Customer&gt;();</span>
+<span class="nc" id="L15">    private static Map&lt;Long, Catalog&gt; catalogs = new HashMap&lt;Long, Catalog&gt;();</span>
+<span class="nc" id="L16">    private static Map&lt;Long, FarmerAccount&gt; farmerAccounts= new HashMap&lt;Long, FarmerAccount&gt;();</span>
+
+    public static Map&lt;Long, Customer&gt; getCustomers() {
+<span class="nc" id="L19">        return customers;</span>
+    }
+
+    public static Map&lt;Long, Catalog&gt; getCatalogs() {
+<span class="nc" id="L23">        return catalogs;</span>
+    }
+
+    public static Map&lt;Long, FarmerAccount&gt; getFarmerAccounts() {
+<span class="nc" id="L27">        return farmerAccounts;</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.7.201606060606</span></div></body></html>

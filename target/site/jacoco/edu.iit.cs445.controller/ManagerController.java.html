@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>ManagerController.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">localfarm Maven Webapp</a> &gt; <a href="index.source.html" class="el_package">edu.iit.cs445.controller</a> &gt; <span class="el_source">ManagerController.java</span></div><h1>ManagerController.java</h1><pre class="source lang-java linenums">package edu.iit.cs445.controller;
+
+import edu.iit.cs445.entitites.Catalog;
+import edu.iit.cs445.entitites.CatalogID;
+import edu.iit.cs445.exception.BadRequestException;
+import edu.iit.cs445.exception.DataNotFoundException;
+import edu.iit.cs445.usecases.Manager;
+
+import javax.ws.rs.*;
+import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Response;
+import java.util.List;
+
+/**
+ * Created by YongYang on 11/7/16.
+ */
+
+@Path(&quot;/managers&quot;)
+<span class="nc" id="L19">public class ManagerController {</span>
+<span class="nc" id="L20">    private Manager manager= new Manager();</span>
+
+    @GET
+    @Path(&quot;/catalog&quot;)
+    @Produces(MediaType.APPLICATION_JSON)
+    public List&lt;Catalog&gt; getAllCustomers(){
+<span class="nc" id="L26">        return manager.getAllCatalogs();</span>
+    }
+
+    @POST
+    @Path(&quot;/catalog&quot;)
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response addCatalog (Catalog catalog) {
+<span class="nc" id="L34">        manager.addCatalog(catalog);</span>
+<span class="nc" id="L35">        long gcpid = catalog.getGcpid();</span>
+<span class="nc" id="L36">        CatalogID catalogID= new CatalogID(gcpid);</span>
+<span class="nc" id="L37">        return Response.status(Response.Status.CREATED).entity(catalogID).build();</span>
+    }
+
+    @Path(&quot;/catalog/{gcpid}&quot;)
+    @PUT
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response addCustomer (@PathParam(&quot;gcpid&quot;) long gcpid,Catalog catalog) throws IllegalAccessException {
+<span class="nc bnc" id="L45" title="All 2 branches missed.">        if (manager.getCatalogById(gcpid)== null) {</span>
+<span class="nc" id="L46">            throw new DataNotFoundException();</span>
+        }
+
+<span class="nc" id="L49">        catalog.setGcpid(gcpid);</span>
+<span class="nc bnc" id="L50" title="All 2 branches missed.">        if(catalog.getName()==null){</span>
+<span class="nc" id="L51">            throw new BadRequestException();</span>
+        }
+
+<span class="nc" id="L54">        manager.updateCatalog(catalog);</span>
+<span class="nc" id="L55">        return Response.status(Response.Status.OK).build();</span>
+    }
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.7.201606060606</span></div></body></html>

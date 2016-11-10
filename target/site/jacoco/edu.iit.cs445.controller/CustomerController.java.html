@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>CustomerController.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">localfarm Maven Webapp</a> &gt; <a href="index.source.html" class="el_package">edu.iit.cs445.controller</a> &gt; <span class="el_source">CustomerController.java</span></div><h1>CustomerController.java</h1><pre class="source lang-java linenums">package edu.iit.cs445.controller;
+
+import edu.iit.cs445.entitites.Customer;
+import edu.iit.cs445.entitites.CustomerID;
+import edu.iit.cs445.exception.BadRequestException;
+import edu.iit.cs445.exception.DataNotFoundException;
+import edu.iit.cs445.usecases.CustomerManager;
+
+import javax.ws.rs.*;
+import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Response;
+import java.util.List;
+
+/**
+ * Created by YongYang on 11/4/16.
+ */
+
+@Path(&quot;/customer&quot;)
+<span class="nc" id="L19">public class CustomerController {</span>
+
+<span class="nc" id="L21">    private CustomerManager cm= new CustomerManager();</span>
+
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    public List&lt;Customer&gt; getAllCustomers(){
+<span class="nc" id="L26">        return cm.getAllCustomers();</span>
+    }
+
+    @Path(&quot;/{cid}&quot;)
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response getCustomer(@PathParam(&quot;cid&quot;) long cid){
+
+<span class="nc" id="L34">        Customer c =cm.getCustomerById(cid);</span>
+<span class="nc" id="L35">        return Response.status(Response.Status.OK).entity(c).build();</span>
+
+
+    }
+
+    @POST
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response addCustomer (Customer customer) {
+<span class="nc" id="L44">        cm.addCustomer(customer);</span>
+<span class="nc" id="L45">        long cid = customer.getID();</span>
+<span class="nc" id="L46">        CustomerID customerID= new CustomerID(cid);</span>
+<span class="nc" id="L47">        return Response.status(Response.Status.CREATED).entity(customerID).build();</span>
+    }
+
+
+    @Path(&quot;/{cid}&quot;)
+    @PUT
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response addCustomer (@PathParam(&quot;cid&quot;) long cid,Customer customer) throws IllegalAccessException {
+<span class="nc bnc" id="L56" title="All 2 branches missed.">        if (cm.getCustomerById(cid) == null) {</span>
+<span class="nc" id="L57">            throw new DataNotFoundException();</span>
+        }
+
+<span class="nc" id="L60">        customer.setID(cid);</span>
+
+<span class="nc bnc" id="L62" title="All 2 branches missed.">        boolean b = customer.getName()==null ||</span>
+<span class="nc bnc" id="L63" title="All 2 branches missed.">                    customer.getPhone()==null ||</span>
+<span class="nc bnc" id="L64" title="All 2 branches missed.">                    customer.getEmail()==null ||</span>
+<span class="nc bnc" id="L65" title="All 2 branches missed.">                    customer.getStreet()==null ||</span>
+<span class="nc bnc" id="L66" title="All 2 branches missed.">                    customer.getZip()==null;</span>
+
+<span class="nc bnc" id="L68" title="All 2 branches missed.">        if(b){</span>
+<span class="nc" id="L69">            throw new BadRequestException();</span>
+        }
+
+
+<span class="nc" id="L73">            cm.updateCustomer(customer);</span>
+<span class="nc" id="L74">            return Response.status(Response.Status.OK).build();</span>
+        }
+
+
+}
+
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.7.201606060606</span></div></body></html>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>CustomerManager.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">localfarm Maven Webapp</a> &gt; <a href="index.source.html" class="el_package">edu.iit.cs445.usecases</a> &gt; <span class="el_source">CustomerManager.java</span></div><h1>CustomerManager.java</h1><pre class="source lang-java linenums">package edu.iit.cs445.usecases;
+
+import edu.iit.cs445.database.Database;
+import edu.iit.cs445.entitites.Customer;
+import edu.iit.cs445.exception.DataNotFoundException;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+
+/**
+ * Created by YongYang on 11/4/16.
+ */
+<span class="nc" id="L14">public class CustomerManager {</span>
+<span class="nc" id="L15">    private Map&lt;Long, Customer&gt; customers = Database.getCustomers();</span>
+
+    public List&lt;Customer&gt; getAllCustomers() {
+
+<span class="nc" id="L19">        return new ArrayList&lt;Customer&gt;(customers.values());</span>
+    }
+
+    public Customer addCustomer(Customer customer) {
+<span class="nc" id="L23">        customer.setID(customers.size()+1);</span>
+<span class="nc" id="L24">        customers.put(customer.getID(),customer);</span>
+<span class="nc" id="L25">        return customer;</span>
+    }
+
+    public Customer getCustomerById(long cid) {
+<span class="nc" id="L29">        Customer customer = customers.get(cid);</span>
+<span class="nc bnc" id="L30" title="All 2 branches missed.">        if(customer==null){</span>
+<span class="nc" id="L31">            throw new DataNotFoundException();</span>
+        }
+<span class="nc" id="L33">        return customer;</span>
+    }
+
+    public Customer updateCustomer(Customer customer) {
+
+<span class="nc" id="L38">        customers.put(customer.getID(), customer);</span>
+<span class="nc" id="L39">        return customer;</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.7.201606060606</span></div></body></html>
