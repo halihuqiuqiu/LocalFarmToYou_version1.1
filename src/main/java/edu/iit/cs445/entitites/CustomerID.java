@@ -4,20 +4,20 @@ package edu.iit.cs445.entitites;
  * Created by YongYang on 11/6/16.
  */
 public class CustomerID {
-    private long cid;
+    private String cid;
 
-    public long getCid() {
+    public String getCid() {
         return cid;
     }
 
-    public void setCid(long cid) {
+    public void setCid(String cid) {
         this.cid = cid;
     }
 
     public CustomerID(){
 
     }
-    public CustomerID(long s){
+    public CustomerID(String s){
         this.cid=s;
     }
 }

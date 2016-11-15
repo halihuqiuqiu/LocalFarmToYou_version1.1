@@ -42,7 +42,7 @@ public class CustomerController {
     @Produces(MediaType.APPLICATION_JSON)
     public Response addCustomer (Customer customer) {
         cm.addCustomer(customer);
-        long cid = customer.getID();
+        String cid = String.valueOf(customer.getID());
         CustomerID customerID= new CustomerID(cid);
         return Response.status(Response.Status.CREATED).entity(customerID).build();
     }
@@ -52,7 +52,7 @@ public class CustomerController {
     @PUT
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
-    public Response addCustomer (@PathParam("cid") long cid,Customer customer) throws IllegalAccessException {
+    public Response addCustomer (@PathParam("cid") long cid,Customer customer) {
         if (cm.getCustomerById(cid) == null) {
             throw new DataNotFoundException();
         }

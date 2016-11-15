@@ -4,8 +4,8 @@ package edu.iit.cs445.entitites;
  * Created by YongYang on 11/7/16.
  */
 public class CatalogID {
-    private long gcpid;
-    public CatalogID(long gcpid) {
+    private String gcpid;
+    public CatalogID(String gcpid) {
         this.gcpid = gcpid;
     }
 
@@ -13,12 +13,12 @@ public class CatalogID {
 
     }
 
-    public long getGcpid() {
+    public String getGcpid() {
 
         return gcpid;
     }
 
-    public void setGcpid(long gcpid) {
+    public void setGcpid(String gcpid) {
         this.gcpid = gcpid;
     }
 }

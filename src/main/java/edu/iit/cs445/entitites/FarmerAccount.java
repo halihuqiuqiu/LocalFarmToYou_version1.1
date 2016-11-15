@@ -1,5 +1,6 @@
 package edu.iit.cs445.entitites;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -12,9 +13,19 @@ public class FarmerAccount {
     private long fid;
     private Farm farm_info;
     private Farmer personal_info;
-    private List<String> deliver_to;
-    private static Map<Long, Product> products = new HashMap<Long, Product>();
+    private List<String> delivers_to= new ArrayList<String>();
+    private Map<Long, Product> products = new HashMap<Long, Product>();
 
+    public FarmerAccount() {
+    }
+
+    public FarmerAccount(long fid, Farm farm_info, Farmer personal_info, List<String> delivers_to, Map<Long, Product> products) {
+        this.fid = fid;
+        this.farm_info = farm_info;
+        this.personal_info = personal_info;
+        this.delivers_to = delivers_to;
+        this.products = products;
+    }
 
     public long getFid() {
         return fid;
@@ -40,19 +51,19 @@ public class FarmerAccount {
         this.personal_info = personal_info;
     }
 
-    public List<String> getDeliver_to() {
-        return deliver_to;
+    public List<String> getDelivers_to() {
+        return delivers_to;
     }
 
-    public void setDeliver_to(List<String> deliver_to) {
-        this.deliver_to = deliver_to;
+    public void setDelivers_to(List<String> deliver_to) {
+        this.delivers_to = delivers_to;
     }
 
-    public static Map<Long, Product> getProducts() {
+    public Map<Long, Product> getProducts() {
         return products;
     }
 
-    public static void setProducts(Map<Long, Product> products) {
-        edu.iit.cs445.entitites.FarmerAccount.products = products;
+    public void setProducts(Map<Long, Product> products) {
+        this.products = products;
     }
 }

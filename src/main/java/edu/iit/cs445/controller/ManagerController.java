@@ -32,7 +32,7 @@ public class ManagerController {
     @Produces(MediaType.APPLICATION_JSON)
     public Response addCatalog (Catalog catalog) {
         manager.addCatalog(catalog);
-        long gcpid = catalog.getGcpid();
+        String gcpid = String.valueOf(catalog.getGcpid());
         CatalogID catalogID= new CatalogID(gcpid);
         return Response.status(Response.Status.CREATED).entity(catalogID).build();
     }
