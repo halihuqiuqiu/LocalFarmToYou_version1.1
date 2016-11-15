@@ -14,17 +14,16 @@ public class FarmerAccount {
     private Farm farm_info;
     private Farmer personal_info;
     private List<String> delivers_to= new ArrayList<String>();
-    private Map<Long, Product> products = new HashMap<Long, Product>();
+
 
     public FarmerAccount() {
     }
 
-    public FarmerAccount(long fid, Farm farm_info, Farmer personal_info, List<String> delivers_to, Map<Long, Product> products) {
+    public FarmerAccount(long fid, Farm farm_info, Farmer personal_info, List<String> delivers_to) {
         this.fid = fid;
         this.farm_info = farm_info;
         this.personal_info = personal_info;
         this.delivers_to = delivers_to;
-        this.products = products;
     }
 
     public long getFid() {
@@ -59,11 +58,4 @@ public class FarmerAccount {
         this.delivers_to = delivers_to;
     }
 
-    public Map<Long, Product> getProducts() {
-        return products;
-    }
-
-    public void setProducts(Map<Long, Product> products) {
-        this.products = products;
-    }
 }
