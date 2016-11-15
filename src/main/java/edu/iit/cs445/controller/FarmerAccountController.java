@@ -6,8 +6,10 @@ import edu.iit.cs445.exception.BadRequestException;
 import edu.iit.cs445.usecases.FarmerAccountManager;
 
 import javax.ws.rs.*;
+import javax.ws.rs.core.GenericEntity;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -17,12 +19,6 @@ import java.util.List;
 @Path("/farmers")
 public class FarmerAccountController {
     private FarmerAccountManager fam= new FarmerAccountManager();
-
-    @GET
-    @Produces(MediaType.APPLICATION_JSON)
-    public List<FarmerAccount> getAllFarmerAccounts(){
-        return fam.getAllFarmerAccounts();
-    }
 
     @Path("/{fid}")
     @GET
@@ -34,6 +30,23 @@ public class FarmerAccountController {
 
 
     }
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response getCustomer(@QueryParam("zip") String zip){
+        if (zip==null){
+            List<FarmerAccount> farmerAccountList = fam.getAllFarmerAccounts();
+            GenericEntity<List<FarmerAccount>> list= new GenericEntity<List<FarmerAccount>>(farmerAccountList) {
+            };
+            return Response.status(Response.Status.OK).entity(list).build();
+        }else{
+            List<FarmerAccountIdName> result = fam.findFarmerAccountByZip(zip);
+            GenericEntity<List<FarmerAccountIdName>> list= new GenericEntity<List<FarmerAccountIdName>>(result) {
+            };
+            return Response.status(Response.Status.OK).entity(list).build();
+
+        }
+    }
+
 
     @POST
     @Consumes(MediaType.APPLICATION_JSON)

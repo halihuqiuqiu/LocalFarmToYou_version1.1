@@ -2,10 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7543209a-61a8-4c6b-89d3-ef5f85693d1a" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/edu/iit/cs445/entitites/FarmerAccountIdName.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/edu/iit/cs445/controller/FarmerAccountController.java" afterPath="$PROJECT_DIR$/src/main/java/edu/iit/cs445/controller/FarmerAccountController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/edu/iit/cs445/database/Database.java" afterPath="$PROJECT_DIR$/src/main/java/edu/iit/cs445/database/Database.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/edu/iit/cs445/entitites/FarmerAccount.java" afterPath="$PROJECT_DIR$/src/main/java/edu/iit/cs445/entitites/FarmerAccount.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/edu/iit/cs445/entitites/FarmerAccountID.java" afterPath="$PROJECT_DIR$/src/main/java/edu/iit/cs445/entitites/FarmerAccountID.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/edu/iit/cs445/usecases/FarmerAccountManager.java" afterPath="$PROJECT_DIR$/src/main/java/edu/iit/cs445/usecases/FarmerAccountManager.java" />
     </list>
     <ignored path="HelloHelloRest.iws" />
@@ -32,7 +32,7 @@
       <file leaf-file-name="CustomerController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/edu/iit/cs445/controller/CustomerController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
+            <state relative-caret-position="391">
               <caret line="37" column="5" selection-start-line="28" selection-start-column="3" selection-end-line="37" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -41,49 +41,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CatalogID.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/edu/iit/cs445/entitites/CatalogID.java">
+      <file leaf-file-name="FarmerAccountManager.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/edu/iit/cs445/usecases/FarmerAccountManager.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="20" column="31" selection-start-line="20" selection-start-column="31" selection-end-line="20" selection-end-column="31" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CustomerManager.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/edu/iit/cs445/usecases/CustomerManager.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="39" column="5" selection-start-line="27" selection-start-column="4" selection-end-line="39" selection-end-column="5" />
+            <state relative-caret-position="143">
+              <caret line="50" column="165" selection-start-line="50" selection-start-column="165" selection-end-line="50" selection-end-column="165" />
               <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="e#1517#1538#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ProductID.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/edu/iit/cs445/entitites/ProductID.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="FarmerAccountManager.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/edu/iit/cs445/usecases/FarmerAccountManager.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="264">
-              <caret line="40" column="5" selection-start-line="40" selection-start-column="5" selection-end-line="40" selection-end-column="5" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Database.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Database.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/edu/iit/cs445/database/Database.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="323">
@@ -96,22 +66,67 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ManagerController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/edu/iit/cs445/controller/ManagerController.java">
+      <file leaf-file-name="FarmerAccountController.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/edu/iit/cs445/controller/FarmerAccountController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="34" column="57" selection-start-line="34" selection-start-column="57" selection-end-line="34" selection-end-column="57" />
+            <state relative-caret-position="289">
+              <caret line="46" column="9" selection-start-line="46" selection-start-column="9" selection-end-line="46" selection-end-column="9" />
+              <folding>
+                <element signature="e#1139#1160#0" expanded="true" />
+                <element signature="e#1445#1472#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FarmerAccountIdName.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/edu/iit/cs445/entitites/FarmerAccountIdName.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-112">
+              <caret line="9" column="34" selection-start-line="9" selection-start-column="34" selection-end-line="9" selection-end-column="34" />
+              <folding>
+                <element signature="e#347#348#0" expanded="true" />
+                <element signature="e#373#374#0" expanded="true" />
+                <element signature="e#411#412#0" expanded="true" />
+                <element signature="e#441#442#0" expanded="true" />
+                <element signature="e#472#473#0" expanded="true" />
+                <element signature="e#499#500#0" expanded="true" />
+                <element signature="e#539#540#0" expanded="true" />
+                <element signature="e#571#572#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FarmerAccountID.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/edu/iit/cs445/entitites/FarmerAccountID.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="102">
+              <caret line="6" column="23" selection-start-line="6" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FarmerAccountController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/edu/iit/cs445/controller/FarmerAccountController.java">
+      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="32" column="71" selection-start-line="32" selection-start-column="71" selection-end-line="32" selection-end-column="71" />
+            <state relative-caret-position="306">
+              <caret line="20" column="16" selection-start-line="20" selection-start-column="16" selection-end-line="20" selection-end-column="16" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Hello.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/edu/iit/cs445/controller/Hello.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="204">
+              <caret line="18" column="33" selection-start-line="18" selection-start-column="33" selection-end-line="18" selection-end-column="33" />
+              <folding>
+                <element signature="e#373#374#0" expanded="true" />
+                <element signature="e#413#414#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -119,8 +134,8 @@
       <file leaf-file-name="FarmerAccount.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/edu/iit/cs445/entitites/FarmerAccount.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="510">
-              <caret line="59" column="0" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
+            <state relative-caret-position="153">
+              <caret line="12" column="21" selection-start-line="12" selection-start-column="4" selection-end-line="12" selection-end-column="21" />
               <folding>
                 <element signature="e#342#350#0" expanded="true" />
               </folding>
@@ -128,11 +143,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DataNotFoundException.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/edu/iit/cs445/exception/DataNotFoundException.java">
+      <file leaf-file-name="Farmer.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/edu/iit/cs445/entitites/Farmer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+            <state relative-caret-position="102">
+              <caret line="6" column="24" selection-start-line="6" selection-start-column="3" selection-end-line="6" selection-end-column="24" />
               <folding />
             </state>
           </provider>
@@ -143,8 +158,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="JUnit4 Test Class" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -186,16 +201,17 @@
         <option value="$PROJECT_DIR$/src/main/java/edu/iit/cs445/usecases/CustomerManagerTest.java" />
         <option value="$PROJECT_DIR$/src/test/CustomerManagerTest.java" />
         <option value="$PROJECT_DIR$/test/edu/iit/cs445/usecases/CustomerManagerTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/edu/iit/cs445/entitites/FarmerAccountID.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/iit/cs445/entitites/CustomerID.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/iit/cs445/controller/CustomerController.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/iit/cs445/entitites/CatalogID.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/iit/cs445/entitites/ProductID.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/iit/cs445/controller/ManagerController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/edu/iit/cs445/usecases/FarmerAccountManager.java" />
-        <option value="$PROJECT_DIR$/src/main/java/edu/iit/cs445/controller/FarmerAccountController.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/iit/cs445/entitites/FarmerAccount.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/iit/cs445/database/Database.java" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/iit/cs445/entitites/FarmerAccountID.java" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/iit/cs445/entitites/FarmerAccountIdName.java" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/iit/cs445/usecases/FarmerAccountManager.java" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/iit/cs445/controller/FarmerAccountController.java" />
       </list>
     </option>
   </component>
@@ -1078,7 +1094,7 @@
       <workItem from="1478740098372" duration="1013000" />
       <workItem from="1478741136983" duration="433000" />
       <workItem from="1478741603225" duration="6574000" />
-      <workItem from="1479164438702" duration="5614000" />
+      <workItem from="1479164438702" duration="11135000" />
     </task>
     <servers />
   </component>
@@ -1094,7 +1110,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="17216000" />
+    <option name="totallyTimeSpent" value="22737000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="14" y="24" width="1400" height="767" extended-state="0" />
@@ -1152,7 +1168,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu.iit.cs445/entities/Farmer.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/edu.iit.cs445/entities/FarmerAccountID.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/edu.iit.cs445/entities/Order.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/edu.iit.cs445/exception/DataNotFoundException.java" />
@@ -1190,14 +1205,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/iit/cs445/controller/Hello.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="18" column="33" selection-start-line="18" selection-start-column="33" selection-end-line="18" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/edu/iit/cs445/usecases/CustomerManagerTest.java" />
     <entry file="file://$PROJECT_DIR$/src/test/CustomerManagerTest.java" />
     <entry file="file://$PROJECT_DIR$/test/edu/iit/cs445/usecases/CustomerManagerTest.java">
@@ -1207,14 +1214,6 @@
           <folding>
             <element signature="imports" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" column="16" selection-start-line="20" selection-start-column="16" selection-end-line="20" selection-end-column="16" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1242,26 +1241,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/iit/cs445/entitites/Farmer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/edu/iit/cs445/exception/BadRequestExceptionMapper.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
           <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/iit/cs445/entitites/FarmerAccountID.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1303,16 +1286,8 @@
         <state relative-caret-position="289">
           <caret line="39" column="5" selection-start-line="27" selection-start-column="4" selection-end-line="39" selection-end-column="5" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/iit/cs445/usecases/FarmerAccountManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="40" column="5" selection-start-line="40" selection-start-column="5" selection-end-line="40" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1324,9 +1299,92 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/iit/cs445/database/Database.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="31" column="80" selection-start-line="31" selection-start-column="80" selection-end-line="31" selection-end-column="80" />
+          <folding>
+            <element signature="e#661#687#0" expanded="true" />
+            <element signature="e#1095#1096#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="20" column="16" selection-start-line="20" selection-start-column="16" selection-end-line="20" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/iit/cs445/entitites/FarmerAccountID.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="23" selection-start-line="6" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/iit/cs445/entitites/FarmerAccount.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="12" column="21" selection-start-line="12" selection-start-column="4" selection-end-line="12" selection-end-column="21" />
+          <folding>
+            <element signature="e#342#350#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/iit/cs445/entitites/Farmer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="24" selection-start-line="6" selection-start-column="3" selection-end-line="6" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/iit/cs445/entitites/FarmerAccountIdName.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-112">
+          <caret line="9" column="34" selection-start-line="9" selection-start-column="34" selection-end-line="9" selection-end-column="34" />
+          <folding>
+            <element signature="e#347#348#0" expanded="true" />
+            <element signature="e#373#374#0" expanded="true" />
+            <element signature="e#411#412#0" expanded="true" />
+            <element signature="e#441#442#0" expanded="true" />
+            <element signature="e#472#473#0" expanded="true" />
+            <element signature="e#499#500#0" expanded="true" />
+            <element signature="e#539#540#0" expanded="true" />
+            <element signature="e#571#572#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/iit/cs445/controller/Hello.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="18" column="33" selection-start-line="18" selection-start-column="33" selection-end-line="18" selection-end-column="33" />
+          <folding>
+            <element signature="e#373#374#0" expanded="true" />
+            <element signature="e#413#414#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/iit/cs445/usecases/FarmerAccountManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="143">
+          <caret line="50" column="165" selection-start-line="50" selection-start-column="165" selection-end-line="50" selection-end-column="165" />
+          <folding>
+            <element signature="e#1517#1538#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/edu/iit/cs445/controller/CustomerController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
+        <state relative-caret-position="391">
           <caret line="37" column="5" selection-start-line="28" selection-start-column="3" selection-end-line="37" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1336,29 +1394,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/edu/iit/cs445/controller/FarmerAccountController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="32" column="71" selection-start-line="32" selection-start-column="71" selection-end-line="32" selection-end-column="71" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/iit/cs445/entitites/FarmerAccount.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="59" column="0" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
+        <state relative-caret-position="289">
+          <caret line="46" column="9" selection-start-line="46" selection-start-column="9" selection-end-line="46" selection-end-column="9" />
           <folding>
-            <element signature="e#342#350#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/iit/cs445/database/Database.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="31" column="80" selection-start-line="31" selection-start-column="80" selection-end-line="31" selection-end-column="80" />
-          <folding>
-            <element signature="e#661#687#0" expanded="true" />
-            <element signature="e#1095#1096#0" expanded="true" />
+            <element signature="e#1139#1160#0" expanded="true" />
+            <element signature="e#1445#1472#0" expanded="true" />
           </folding>
         </state>
       </provider>

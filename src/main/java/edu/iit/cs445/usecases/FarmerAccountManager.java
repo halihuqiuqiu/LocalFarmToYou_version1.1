@@ -2,7 +2,9 @@ package edu.iit.cs445.usecases;
 
 import edu.iit.cs445.database.Database;
 import edu.iit.cs445.entitites.Customer;
+import edu.iit.cs445.entitites.Farmer;
 import edu.iit.cs445.entitites.FarmerAccount;
+import edu.iit.cs445.entitites.FarmerAccountIdName;
 import edu.iit.cs445.exception.BadRequestException;
 import edu.iit.cs445.exception.DataNotFoundException;
 
@@ -39,4 +41,19 @@ public class FarmerAccountManager {
         farmerAccounts.put(farmerAccount.getFid(), farmerAccount);
         return farmerAccount;
     }
+
+    public List<FarmerAccountIdName> findFarmerAccountByZip(String zip){
+        List<FarmerAccountIdName> result = new ArrayList<FarmerAccountIdName>();
+        List<FarmerAccount> farmerAccountsList= getAllFarmerAccounts();
+        for(FarmerAccount farmerAccount: farmerAccountsList){
+            for(String s : farmerAccount.getDelivers_to()){
+                if (s.equals(zip)){
+                    FarmerAccountIdName farmerAccountIdName = new FarmerAccountIdName(String.valueOf(farmerAccount.getFid()),farmerAccount.getFarm_info().getName());
+                    result.add(farmerAccountIdName);
+                }
+            }
+        }
+        return result;
+    }
+
 }
