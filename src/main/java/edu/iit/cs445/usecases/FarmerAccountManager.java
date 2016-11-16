@@ -39,7 +39,10 @@ public class FarmerAccountManager {
     }
 
     public FarmerAccount updateFarmerAccount(FarmerAccount farmerAccount) {
-
+        String fid=farmerAccount.getFid();
+        if(farmerAccounts.get(fid)==null){
+            throw new DataNotFoundException();
+        }
         farmerAccounts.put(farmerAccount.getFid(), farmerAccount);
         return farmerAccount;
     }
@@ -50,7 +53,7 @@ public class FarmerAccountManager {
         for(FarmerAccount farmerAccount: farmerAccountsList){
             for(String s : farmerAccount.getDelivers_to()){
                 if (s.equals(zip)){
-                    FarmerAccountIdName farmerAccountIdName = new FarmerAccountIdName(String.valueOf(farmerAccount.getFid()),farmerAccount.getFarm_info().getName());
+                    FarmerAccountIdName farmerAccountIdName = new FarmerAccountIdName(farmerAccount.getFid(),farmerAccount.getFarm_info().getName());
                     result.add(farmerAccountIdName);
                 }
             }

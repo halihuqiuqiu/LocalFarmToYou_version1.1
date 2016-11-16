@@ -15,14 +15,18 @@ import java.util.Map;
  * Created by YongYang on 11/15/16.
  */
 public class FarmerProductManager {
+    private Map<String, FarmerAccount> farmerAccounts= Database.getFarmerAccounts();
     private Map<String, Map<String,Product>> farmerAccountsProudctsMap = Database.getFarmerAccountsProudctsMap();
     private Map<String, Catalog> catalogs = Database.getCatalogs();
     public List<Product> getAllFarmerProducts(String fid) {
 
         return new ArrayList<Product>(farmerAccountsProudctsMap.get(fid).values());
     }
-    public Product addFarmerProdcut(String fid, Product product ) {
 
+    public Product addFarmerProdcut(String fid, Product product ) {
+        if(farmerAccounts.get(fid)==null){
+            throw new DataNotFoundException();
+        }
         product.setFspid(String.valueOf(farmerAccountsProudctsMap.get(fid).size()+1));
 
         // String name = catalogs.get(product.getGcpid()).getName();
@@ -38,16 +42,20 @@ public class FarmerProductManager {
 
 
     public Product getFarmerProductById(String fid, String fspid) {
-        Product product = farmerAccountsProudctsMap.get(fid).get(fspid);
-        if(product==null){
+        if (farmerAccounts.get(fid)==null||farmerAccountsProudctsMap.get(fid).get(fspid)==null){
             throw new DataNotFoundException();
         }
+        Product product = farmerAccountsProudctsMap.get(fid).get(fspid);
         return product;
     }
 
     public Product partialUpdateFarmerProduct(String fid, Product product) {
-
         String fspid = product.getFspid();
+
+        if(farmerAccounts.get(fid)==null||getFarmerProductById(fid,fspid)==null){
+            throw new DataNotFoundException();
+        }
+
         Product original = farmerAccountsProudctsMap.get(fid).get(fspid);
         if(product.getNote()!=null){
             original.setNote(product.getNote());

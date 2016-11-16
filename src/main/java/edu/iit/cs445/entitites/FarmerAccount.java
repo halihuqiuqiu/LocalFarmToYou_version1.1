@@ -1,5 +1,7 @@
 package edu.iit.cs445.entitites;
 
+import edu.iit.cs445.exception.BadRequestException;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -13,7 +15,7 @@ public class FarmerAccount {
     private String fid;
     private Farm farm_info;
     private Farmer personal_info;
-    private List<String> delivers_to= new ArrayList<String>();
+    private List<String> delivers_to=new ArrayList<String>();
 
 
     public FarmerAccount() {
@@ -56,6 +58,29 @@ public class FarmerAccount {
 
     public void setDelivers_to(List<String> deliver_to) {
         this.delivers_to = delivers_to;
+    }
+
+    public void validateEntity(){
+        boolean b = getFarm_info()==null ||
+                getPersonal_info()==null ||
+                getDelivers_to().isEmpty();
+        if(b){
+            throw new BadRequestException();
+        }
+
+        boolean c =getFarm_info().getName()==null ||
+                getFarm_info().getAddress()==null||
+                getFarm_info().getPhone()==null||
+                getFarm_info().getWeb()==null;
+
+
+        boolean d= getPersonal_info().getEmail()==null||
+                getPersonal_info().getName()==null||
+                getPersonal_info().getPhone()==null;
+
+        if(c||d){
+            throw new BadRequestException();
+        }
     }
 
 }

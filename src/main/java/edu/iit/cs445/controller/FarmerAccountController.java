@@ -29,7 +29,7 @@ public class FarmerAccountController {
     @Produces(MediaType.APPLICATION_JSON)
     public Response getCustomer(@PathParam("fid") String fid){
 
-        FarmerAccount farmerAccount = fam.getFarmerAccountById(fid);
+        FarmerAccount farmerAccount = fam.getFarmerAccountById(fid); // if not find fid, throw DataNotFoundException
         return Response.status(Response.Status.OK).entity(farmerAccount).build();
 
 
@@ -37,7 +37,7 @@ public class FarmerAccountController {
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     public Response getCustomerByZip(@QueryParam("zip") String zip){
-        if (zip==null){
+        if (zip==null){  //return all
             List<FarmerAccount> farmerAccountList = fam.getAllFarmerAccounts();
             GenericEntity<List<FarmerAccount>> list= new GenericEntity<List<FarmerAccount>>(farmerAccountList) {
             };
@@ -56,28 +56,7 @@ public class FarmerAccountController {
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
     public Response addFarmerAccount (FarmerAccount farmerAccount) {
-        boolean b = farmerAccount.getFarm_info()==null ||
-                farmerAccount.getPersonal_info()==null ||
-                farmerAccount.getDelivers_to().isEmpty();
-        if(b){
-            throw new BadRequestException();
-        }
-
-        boolean c =farmerAccount.getFarm_info().getName()==null ||
-                   farmerAccount.getFarm_info().getAddress()==null||
-                    farmerAccount.getFarm_info().getPhone()==null||
-                farmerAccount.getFarm_info().getWeb()==null;
-
-
-        boolean d= farmerAccount.getPersonal_info().getEmail()==null||
-                farmerAccount.getPersonal_info().getName()==null||
-                farmerAccount.getPersonal_info().getPhone()==null;
-
-        if(c||d){
-            throw new BadRequestException();
-        }
-
-
+        farmerAccount.validateEntity();
 
         fam.addFarmerAccount(farmerAccount);
         SimplePropertyPreFilter filter = new SimplePropertyPreFilter(FarmerAccount.class, "fid");
@@ -90,34 +69,9 @@ public class FarmerAccountController {
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
     public Response addFarmerAccount (@PathParam("fid") String fid,FarmerAccount farmerAccount) {
-        if (fam.getFarmerAccountById(fid)==null) {
-            throw new DataNotFoundException();
-        }
-
         farmerAccount.setFid(fid);
-
-        boolean b = farmerAccount.getFarm_info()==null ||
-                farmerAccount.getPersonal_info()==null ||
-                farmerAccount.getDelivers_to().isEmpty();
-        if(b){
-            throw new BadRequestException();
-        }
-
-        boolean c =farmerAccount.getFarm_info().getName()==null ||
-                farmerAccount.getFarm_info().getAddress()==null||
-                farmerAccount.getFarm_info().getPhone()==null||
-                farmerAccount.getFarm_info().getWeb()==null;
-
-
-        boolean d= farmerAccount.getPersonal_info().getEmail()==null||
-                farmerAccount.getPersonal_info().getName()==null||
-                farmerAccount.getPersonal_info().getPhone()==null;
-
-        if(c||d){
-            throw new BadRequestException();
-        }
-
-        fam.updateFarmerAccount(farmerAccount);
+        farmerAccount.validateEntity();
+        fam.updateFarmerAccount(farmerAccount);    // if not find fid, throw DataNotFoundException
         return Response.status(Response.Status.OK).build();
     }
 
@@ -161,10 +115,10 @@ public class FarmerAccountController {
     @Produces(MediaType.APPLICATION_JSON)
     public Response addProduct (@PathParam("fid") String fid,Product product) {
 
-        fpm.addFarmerProdcut(fid, product);
-        String fspid=String.valueOf(product.getFspid());
-        ProductID productID = new ProductID(fspid);
-        return Response.status(Response.Status.CREATED).entity(productID).build();
+        fpm.addFarmerProdcut(fid, product); // if not find fid, throw DataNotFoundException
+        SimplePropertyPreFilter filter = new SimplePropertyPreFilter(Product.class,"fspid");
+        String res = JSON.toJSONString(product,filter);
+        return Response.status(Response.Status.CREATED).entity(res).build();
     }
 
     @POST
