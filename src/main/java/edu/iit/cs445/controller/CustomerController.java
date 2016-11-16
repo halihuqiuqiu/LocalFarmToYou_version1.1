@@ -29,8 +29,11 @@ public class CustomerController {
     @Path("/{cid}")
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    public Response getCustomer(@PathParam("cid") long cid){
+    public Response getCustomer(@PathParam("cid") String cid){
 
+        if (cm.getCustomerById(cid) == null) {
+            throw new DataNotFoundException();
+        }
         Customer c =cm.getCustomerById(cid);
         return Response.status(Response.Status.OK).entity(c).build();
 
@@ -42,7 +45,7 @@ public class CustomerController {
     @Produces(MediaType.APPLICATION_JSON)
     public Response addCustomer (Customer customer) {
         cm.addCustomer(customer);
-        String cid = String.valueOf(customer.getID());
+        String cid = customer.getID();
         CustomerID customerID= new CustomerID(cid);
         return Response.status(Response.Status.CREATED).entity(customerID).build();
     }
@@ -52,7 +55,7 @@ public class CustomerController {
     @PUT
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
-    public Response addCustomer (@PathParam("cid") long cid,Customer customer) {
+    public Response addCustomer (@PathParam("cid") String cid,Customer customer) {
         if (cm.getCustomerById(cid) == null) {
             throw new DataNotFoundException();
         }
@@ -70,8 +73,8 @@ public class CustomerController {
         }
 
 
-            cm.updateCustomer(customer);
-            return Response.status(Response.Status.OK).build();
+        cm.updateCustomer(customer);
+        return Response.status(Response.Status.OK).build();
         }
 
 

@@ -4,8 +4,9 @@ package edu.iit.cs445.entitites;
  * Created by YongYang on 11/7/16.
  */
 public class Product {
-    private long fspid;
-    private String gfcid;
+    private String fspid;
+    private String gcpid;
+    private String name;
     private String note;
     private String start_date;
     private String end_date;
@@ -16,9 +17,10 @@ public class Product {
     public Product() {
     }
 
-    public Product(long fspid, String gfcid, String note, String start_date, String end_date, Double price, String product_unit, String image) {
+    public Product(String fspid, String gcpid, String name, String note, String start_date, String end_date, Double price, String product_unit, String image) {
         this.fspid = fspid;
-        this.gfcid = gfcid;
+        this.gcpid = gcpid;
+        this.name =name;
         this.note = note;
         this.start_date = start_date;
         this.end_date = end_date;
@@ -27,20 +29,29 @@ public class Product {
         this.image = image;
     }
 
-    public long getFspid() {
+
+    public String getFspid() {
         return fspid;
     }
 
-    public void setFspid(long fspid) {
+    public void setFspid(String fspid) {
         this.fspid = fspid;
     }
 
-    public String getGfcid() {
-        return gfcid;
+    public String getGcpid() {
+        return gcpid;
     }
 
-    public void setGfcid(String gfcid) {
-        this.gfcid = gfcid;
+    public void setGcpid(String gcpid) {
+        this.gcpid = gcpid;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getNote() {

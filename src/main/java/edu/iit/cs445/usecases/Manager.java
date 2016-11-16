@@ -12,7 +12,7 @@ import java.util.Map;
  * Created by YongYang on 11/7/16.
  */
 public class Manager {
-    private Map<Long, Catalog> catalogs= Database.getCatalogs();
+    private Map<String, Catalog> catalogs= Database.getCatalogs();
 
     ////
     public List<Catalog> getAllCatalogs() {
@@ -21,12 +21,12 @@ public class Manager {
     }
 
     public Catalog addCatalog(Catalog catalog) {
-        catalog.setGcpid(catalogs.size()+1);
+        catalog.setGcpid(String.valueOf(catalogs.size()+1));
         catalogs.put(catalog.getGcpid(),catalog);
         return catalog;
     }
 
-    public Catalog getCatalogById(long gcpid) {
+    public Catalog getCatalogById(String gcpid) {
         Catalog catalog = catalogs.get(gcpid);
         if(catalog==null){
             throw new DataNotFoundException();

@@ -12,24 +12,24 @@ import java.util.Map;
  * Created by YongYang on 11/6/16.
  */
 public class Database {
-    private static Map<Long, Customer> customers = new HashMap<Long, Customer>();
-    private static Map<Long, Catalog> catalogs = new HashMap<Long, Catalog>();
-    private static Map<Long, FarmerAccount> farmerAccounts= new HashMap<Long, FarmerAccount>();
-    private static Map<Long, Map<Long,Product>> farmerAccountsProudctsMap = new HashMap<Long, Map<Long, Product>>();
+    private static Map<String, Customer> customers = new HashMap<String, Customer>();
+    private static Map<String, Catalog> catalogs = new HashMap<String, Catalog>();
+    private static Map<String, FarmerAccount> farmerAccounts= new HashMap<String, FarmerAccount>();
+    private static Map<String, Map<String,Product>> farmerAccountsProudctsMap = new HashMap<String, Map<String, Product>>();
 
-    public static Map<Long, Customer> getCustomers() {
+    public static Map<String, Customer> getCustomers() {
         return customers;
     }
 
-    public static Map<Long, Catalog> getCatalogs() {
+    public static Map<String, Catalog> getCatalogs() {
         return catalogs;
     }
 
-    public static Map<Long, FarmerAccount> getFarmerAccounts() {
+    public static Map<String, FarmerAccount> getFarmerAccounts() {
         return farmerAccounts;
     }
 
-    public static Map<Long, Map<Long, Product>> getFarmerAccountsProudctsMap() {
+    public static Map<String, Map<String, Product>> getFarmerAccountsProudctsMap() {
         return farmerAccountsProudctsMap;
     }
 }

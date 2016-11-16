@@ -6,7 +6,7 @@ package edu.iit.cs445.entitites;
  */
 
 public class Customer {
-    private long cid;
+    private String cid;
     private String name;
     private String street;
     private String zip;
@@ -21,11 +21,11 @@ public class Customer {
         this.name = name;
     }
 
-    public long getID() {
+    public String getID() {
         return cid;
     }
 
-    public void setID(long ID) {
+    public void setID(String ID) {
         this.cid = ID;
     }
 
@@ -63,7 +63,7 @@ public class Customer {
 
     public Customer(){
     }
-    public Customer(long ID, String name, String street, String zip, String phone, String email) {
+    public Customer(String ID, String name, String street, String zip, String phone, String email) {
 
         this.cid=ID;
         this.name=name;
@@ -72,14 +72,5 @@ public class Customer {
         this.phone=phone;
         this.email=email;
 
-    }
-
-
-    public boolean matchesId(long cid) {
-        return(cid == this.cid);
-    }
-
-    public boolean isNil() {
-        return false;
     }
 }

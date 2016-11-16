@@ -10,7 +10,7 @@ import java.util.Map;
  */
 public class FarmerAccount {
 
-    private long fid;
+    private String fid;
     private Farm farm_info;
     private Farmer personal_info;
     private List<String> delivers_to= new ArrayList<String>();
@@ -19,18 +19,18 @@ public class FarmerAccount {
     public FarmerAccount() {
     }
 
-    public FarmerAccount(long fid, Farm farm_info, Farmer personal_info, List<String> delivers_to) {
+    public FarmerAccount(String fid, Farm farm_info, Farmer personal_info, List<String> delivers_to) {
         this.fid = fid;
         this.farm_info = farm_info;
         this.personal_info = personal_info;
         this.delivers_to = delivers_to;
     }
 
-    public long getFid() {
+    public String getFid() {
         return fid;
     }
 
-    public void setFid(long fid) {
+    public void setFid(String fid) {
         this.fid = fid;
     }
 

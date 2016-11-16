@@ -12,7 +12,7 @@ import java.util.Map;
  * Created by YongYang on 11/4/16.
  */
 public class CustomerManager {
-    private Map<Long, Customer> customers = Database.getCustomers();
+    private Map<String, Customer> customers = Database.getCustomers();
 
     public List<Customer> getAllCustomers() {
 
@@ -20,12 +20,12 @@ public class CustomerManager {
     }
 
     public Customer addCustomer(Customer customer) {
-        customer.setID(customers.size()+1);
+        customer.setID(String.valueOf(customers.size()+1));
         customers.put(customer.getID(),customer);
         return customer;
     }
 
-    public Customer getCustomerById(long cid) {
+    public Customer getCustomerById(String cid) {
         Customer customer = customers.get(cid);
         if(customer==null){
             throw new DataNotFoundException();

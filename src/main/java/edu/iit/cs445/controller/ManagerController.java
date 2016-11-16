@@ -41,7 +41,7 @@ public class ManagerController {
     @PUT
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
-    public Response addCustomer (@PathParam("gcpid") long gcpid,Catalog catalog) throws IllegalAccessException {
+    public Response addCustomer (@PathParam("gcpid") String gcpid,Catalog catalog) {
         if (manager.getCatalogById(gcpid)== null) {
             throw new DataNotFoundException();
         }
