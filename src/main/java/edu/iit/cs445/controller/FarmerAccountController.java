@@ -1,5 +1,7 @@
 package edu.iit.cs445.controller;
 
+import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.serializer.SimplePropertyPreFilter;
 import edu.iit.cs445.entitites.*;
 import edu.iit.cs445.exception.*;
 import edu.iit.cs445.exception.BadRequestException;
@@ -75,10 +77,12 @@ public class FarmerAccountController {
             throw new BadRequestException();
         }
 
+
+
         fam.addFarmerAccount(farmerAccount);
-        String fid = String.valueOf(farmerAccount.getFid());
-        FarmerAccountID farmerAccountID = new FarmerAccountID(fid);
-        return Response.status(Response.Status.CREATED).entity(farmerAccountID).build();
+        SimplePropertyPreFilter filter = new SimplePropertyPreFilter(FarmerAccount.class, "fid");
+        String res= JSON.toJSONString(farmerAccount,filter);
+        return Response.status(Response.Status.CREATED).entity(res).build();
     }
 
     @Path("/{fid}")
