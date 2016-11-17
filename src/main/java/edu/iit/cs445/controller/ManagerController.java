@@ -30,7 +30,7 @@ public class ManagerController {
 
         List<Catalog> catalogList = manager.getAllCatalogs();
         GenericEntity<List<Catalog>> list = new GenericEntity<List<Catalog>>(catalogList){};
-        return Response.status(Response.Status.OK).entity(list).build();
+        return Response.ok(list).build();
 
     }
 
