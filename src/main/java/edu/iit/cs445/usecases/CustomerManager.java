@@ -20,8 +20,8 @@ public class CustomerManager {
     }
 
     public Customer addCustomer(Customer customer) {
-        customer.setID(String.valueOf(customers.size()+1));
-        customers.put(customer.getID(),customer);
+        customer.setCid(String.valueOf(customers.size()+1));
+        customers.put(customer.getCid(),customer);
         return customer;
     }
 
@@ -35,7 +35,7 @@ public class CustomerManager {
 
     public Customer updateCustomer(Customer customer) {
 
-        customers.put(customer.getID(), customer);
+        customers.put(customer.getCid(), customer);
         return customer;
     }
 }

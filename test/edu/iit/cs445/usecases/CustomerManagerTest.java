@@ -16,8 +16,8 @@ public class CustomerManagerTest {
     @Before
     public void setup(){
 
-        Customer c1= new Customer("1", "a", "b", "c", "d", "e");
-        Customer c2= new Customer("2", "A", "B", "C", "D", "E");
+        Customer c1= new Customer();
+        Customer c2= new Customer();
         cm.addCustomer(c1);
         cm.addCustomer(c2);
     }
@@ -31,7 +31,7 @@ public class CustomerManagerTest {
     @Test
     public void updateCustomer() throws Exception {
 
-        Customer customerUpdate= new Customer("1","aa","bb","cc","dd","ee");
+        Customer customerUpdate= new Customer();
         cm.updateCustomer(customerUpdate);
         assertEquals(customerUpdate,cm.getCustomerById("1"));
     }

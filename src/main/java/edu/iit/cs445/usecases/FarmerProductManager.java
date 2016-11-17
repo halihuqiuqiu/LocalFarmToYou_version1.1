@@ -31,8 +31,7 @@ public class FarmerProductManager {
         }
         product.setFspid(String.valueOf(farmerAccounts.get(fid).getProductsMap().size()+1));
 
-        // String name = catalogs.get(product.getGcpid()).getName();
-        String name ="name catalogs125";
+        String name = catalogs.get(product.getGcpid()).getName();
 
         product.setName(name);
         Product productbyCatalogName = product;

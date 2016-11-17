@@ -42,14 +42,14 @@ public class FarmerAccountController {
     public Response getCustomerByZip(@QueryParam("zip") String zip) {
         if (zip == null) {  //return all
             List<FarmerAccount> farmerAccountList = fam.getAllFarmerAccounts();
-            SimplePropertyPreFilter filter = new SimplePropertyPreFilter(FarmerAccount.class, "fid", "farm_info", "personal_info", "delivers_to");
+            SimplePropertyPreFilter filter = new SimplePropertyPreFilter(FarmerAccount.class, "fid", "name");
             String res = JSON.toJSONString(farmerAccountList,filter);
             return Response.status(Response.Status.OK).entity(res).build();
         } else {
-            List<FarmerAccountIdName> result = fam.findFarmerAccountByZip(zip);
-            GenericEntity<List<FarmerAccountIdName>> list = new GenericEntity<List<FarmerAccountIdName>>(result) {
-            };
-            return Response.status(Response.Status.OK).entity(list).build();
+            List<FarmerAccount> result = fam.findFarmerAccountByZip(zip);
+            SimplePropertyPreFilter filter = new SimplePropertyPreFilter(FarmerAccount.class, "fid", "name");
+            String res = JSON.toJSONString(result,filter);
+            return Response.status(Response.Status.OK).entity(res).build();
 
         }
     }

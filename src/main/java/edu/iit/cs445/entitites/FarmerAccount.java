@@ -12,25 +12,35 @@ import java.util.Map;
  */
 public class FarmerAccount {
 
+    private String name;
     private String fid;
     private Farm farm_info;
     private Farmer personal_info;
     private List<String> delivers_to=new ArrayList<String>();
     private Map<String,Product> productsMap = new HashMap<String, Product>();
-    double delivery_charge;
+    private double delivery_charge;
 
 
     public FarmerAccount() {
         this.delivery_charge=0.00;
     }
 
-    public FarmerAccount(String fid, Farm farm_info, Farmer personal_info, List<String> delivers_to, Map<String, Product> productsMap, double delivery_charge) {
+    public FarmerAccount(String name, String fid, Farm farm_info, Farmer personal_info, List<String> delivers_to, Map<String, Product> productsMap, double delivery_charge) {
+        this.name = name;
         this.fid = fid;
         this.farm_info = farm_info;
         this.personal_info = personal_info;
         this.delivers_to = delivers_to;
         this.productsMap = productsMap;
         this.delivery_charge = delivery_charge;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getFid() {

@@ -4,6 +4,7 @@ package edu.iit.cs445.entitites;
  * Created by YongYang on 11/7/16.
  */
 public class Farm {
+    private String fid;
     private String name;
     private String address;
     private String phone;
@@ -12,11 +13,20 @@ public class Farm {
     public Farm() {
     }
 
-    public Farm(String name, String address, String phone, String web) {
+    public Farm(String fid, String name, String address, String phone, String web) {
+        this.fid = fid;
         this.name = name;
         this.address = address;
         this.phone = phone;
         this.web = web;
+    }
+
+    public String getFid() {
+        return fid;
+    }
+
+    public void setFid(String fid) {
+        this.fid = fid;
     }
 
     public String getName() {

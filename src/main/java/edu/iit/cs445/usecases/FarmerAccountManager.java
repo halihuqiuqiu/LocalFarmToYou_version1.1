@@ -22,6 +22,7 @@ public class FarmerAccountManager {
 
     public FarmerAccount addFarmerAccount(FarmerAccount farmerAccount) {
         farmerAccount.setFid(String.valueOf(farmerAccounts.size()+1));
+        farmerAccount.setName(farmerAccount.getFarm_info().getName());
         farmerAccounts.put(farmerAccount.getFid(),farmerAccount);
         return farmerAccount;
     }
@@ -43,14 +44,13 @@ public class FarmerAccountManager {
         return farmerAccount;
     }
 
-    public List<FarmerAccountIdName> findFarmerAccountByZip(String zip){
-        List<FarmerAccountIdName> result = new ArrayList<FarmerAccountIdName>();
+    public List<FarmerAccount> findFarmerAccountByZip(String zip){
+        List<FarmerAccount> result = new ArrayList<FarmerAccount>();
         List<FarmerAccount> farmerAccountsList= getAllFarmerAccounts();
         for(FarmerAccount farmerAccount: farmerAccountsList){
             for(String s : farmerAccount.getDelivers_to()){
                 if (s.equals(zip)){
-                    FarmerAccountIdName farmerAccountIdName = new FarmerAccountIdName(farmerAccount.getFid(),farmerAccount.getFarm_info().getName());
-                    result.add(farmerAccountIdName);
+                    result.add(farmerAccount);
                 }
             }
         }
