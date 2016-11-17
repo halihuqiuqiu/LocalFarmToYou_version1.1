@@ -4,9 +4,9 @@ import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.serializer.SimplePropertyPreFilter;
 import edu.iit.cs445.entitites.Catalog;
 import edu.iit.cs445.entitites.FarmerAccount;
-import edu.iit.cs445.exception.BadRequestException;
-import edu.iit.cs445.exception.DataNotFoundException;
-import edu.iit.cs445.usecases.Manager;
+import edu.iit.cs445.entitites.Manager;
+import edu.iit.cs445.usecases.CatalogManager;
+import edu.iit.cs445.usecases.MangerService;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.GenericEntity;
@@ -20,7 +20,8 @@ import java.util.List;
 
 @Path("/managers")
 public class ManagerController {
-    private Manager manager = new Manager();
+    private CatalogManager manager = new CatalogManager();
+    private MangerService ms = new MangerService();
 
     @GET
     @Path("/catalog")
@@ -53,5 +54,28 @@ public class ManagerController {
         manager.updateCatalog(catalog);   // if not find gcpid, throw DataNotFoundException
         return Response.status(Response.Status.OK).build();
     }
+
+    @GET
+    @Path("/accounts")
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response getAllManagerAccounts() {
+        List<Manager> managerList = ms.getAllManagers();
+        GenericEntity<List<Manager>> list = new GenericEntity<List<Manager>>(managerList){};
+        return Response.status(Response.Status.OK).entity(list).build();
+
+    }
+
+    @Path("/accounts/{mid}")
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response getManagerAccount(@PathParam("mid") String mid) {
+
+        Manager manager = ms.getManagerById(mid); // if not find fid, throw DataNotFoundException
+        return Response.status(Response.Status.OK).entity(manager).build();
+
+
+    }
+
+
 
 }

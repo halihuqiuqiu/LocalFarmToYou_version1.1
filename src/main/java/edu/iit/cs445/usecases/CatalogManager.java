@@ -11,7 +11,7 @@ import java.util.Map;
 /**
  * Created by YongYang on 11/7/16.
  */
-public class Manager {
+public class CatalogManager {
     private Map<String, Catalog> catalogs= Database.getCatalogs();
 
     public List<Catalog> getAllCatalogs() {
