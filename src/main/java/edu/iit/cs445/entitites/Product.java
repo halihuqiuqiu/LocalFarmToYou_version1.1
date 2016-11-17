@@ -10,14 +10,14 @@ public class Product {
     private String note;
     private String start_date;
     private String end_date;
-    private Double price;
+    private double price;
     private String product_unit;
     private String image;
 
     public Product() {
     }
 
-    public Product(String fspid, String gcpid, String name, String note, String start_date, String end_date, Double price, String product_unit, String image) {
+    public Product(String fspid, String gcpid, String name, String note, String start_date, String end_date, double price, String product_unit, String image) {
         this.fspid = fspid;
         this.gcpid = gcpid;
         this.name =name;
@@ -78,11 +78,11 @@ public class Product {
         this.end_date = end_date;
     }
 
-    public Double getPrice() {
+    public double getPrice() {
         return price;
     }
 
-    public void setPrice(Double price) {
+    public void setPrice(double price) {
         this.price = price;
     }
 

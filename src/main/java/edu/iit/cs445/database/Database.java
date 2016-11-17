@@ -17,6 +17,7 @@ public class Database {
     private static Map<String, FarmerAccount> farmerAccounts= new HashMap<String, FarmerAccount>();
     private static Map<String, Map<String,Product>> farmerAccountsProudctsMap = new HashMap<String, Map<String, Product>>();
 
+
     public static Map<String, Customer> getCustomers() {
         return customers;
     }

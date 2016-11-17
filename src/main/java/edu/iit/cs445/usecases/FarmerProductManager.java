@@ -6,6 +6,7 @@ import edu.iit.cs445.entitites.FarmerAccount;
 import edu.iit.cs445.entitites.Product;
 import edu.iit.cs445.exception.DataNotFoundException;
 
+import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -57,6 +58,26 @@ public class FarmerProductManager {
         }
 
         Product original = farmerAccountsProudctsMap.get(fid).get(fspid);
+
+        Field[] fields = product.getClass().getDeclaredFields();
+
+        for( Field field : fields ){ //only change filed required
+            field.setAccessible(true);
+            try {
+                Class type = field.getType();
+                Object value = field.get(product);
+                if(value != null){
+                    field.set(original, value);
+                }
+                else if(type.equals(double.class) && field.getDouble(product)!= 0){
+                    field.setDouble(original, field.getDouble(product));
+                }
+            } catch (IllegalArgumentException e1) {
+            } catch (IllegalAccessException e1) {
+            }
+        }
+
+        /*
         if(product.getNote()!=null){
             original.setNote(product.getNote());
         }
@@ -75,6 +96,7 @@ public class FarmerProductManager {
         if (product.getImage()!=null){
             original.setImage(product.getImage());
         }
+        */
         farmerAccountsProudctsMap.get(fid).put(product.getFspid(),original);
         return product;
     }
