@@ -15,7 +15,6 @@ import java.util.Map;
  */
 public class FarmerAccountManager {
     private Map<String, FarmerAccount> farmerAccounts= Database.getFarmerAccounts();
-    private Map<String, Map<String,Product>> farmerAccountsProudctsMap = Database.getFarmerAccountsProudctsMap();
     public List<FarmerAccount> getAllFarmerAccounts() {
 
         return new ArrayList<FarmerAccount>(farmerAccounts.values());
@@ -24,9 +23,6 @@ public class FarmerAccountManager {
     public FarmerAccount addFarmerAccount(FarmerAccount farmerAccount) {
         farmerAccount.setFid(String.valueOf(farmerAccounts.size()+1));
         farmerAccounts.put(farmerAccount.getFid(),farmerAccount);
-
-        farmerAccountsProudctsMap.put(farmerAccount.getFid(),new HashMap<String, Product>());
-
         return farmerAccount;
     }
 

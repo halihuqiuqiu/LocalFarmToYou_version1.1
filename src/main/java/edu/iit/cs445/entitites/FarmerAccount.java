@@ -16,16 +16,21 @@ public class FarmerAccount {
     private Farm farm_info;
     private Farmer personal_info;
     private List<String> delivers_to=new ArrayList<String>();
+    private Map<String,Product> productsMap = new HashMap<String, Product>();
+    double delivery_charge;
 
 
     public FarmerAccount() {
+        this.delivery_charge=0.00;
     }
 
-    public FarmerAccount(String fid, Farm farm_info, Farmer personal_info, List<String> delivers_to) {
+    public FarmerAccount(String fid, Farm farm_info, Farmer personal_info, List<String> delivers_to, Map<String, Product> productsMap, double delivery_charge) {
         this.fid = fid;
         this.farm_info = farm_info;
         this.personal_info = personal_info;
         this.delivers_to = delivers_to;
+        this.productsMap = productsMap;
+        this.delivery_charge = delivery_charge;
     }
 
     public String getFid() {
@@ -58,6 +63,25 @@ public class FarmerAccount {
 
     public void setDelivers_to(List<String> deliver_to) {
         this.delivers_to = delivers_to;
+    }
+
+    public Map<String, Product> getProductsMap() {
+        return productsMap;
+    }
+
+    public void setProductsMap(Map<String, Product> productsMap) {
+        this.productsMap = productsMap;
+    }
+
+    public double getDelivery_charge() {
+        return delivery_charge;
+    }
+
+    public void setDelivery_charge(double delivery_charge) {
+        if (delivery_charge<0){
+            throw new BadRequestException();    //delivery_charge should >=0
+        }
+        this.delivery_charge = delivery_charge;
     }
 
     public void validateEntity(){

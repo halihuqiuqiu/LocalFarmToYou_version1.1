@@ -1,12 +1,13 @@
 package edu.iit.cs445.controller;
 
+import edu.iit.cs445.entitites.Catalog;
 import edu.iit.cs445.entitites.Customer;
-import edu.iit.cs445.entitites.CustomerID;
 import edu.iit.cs445.exception.BadRequestException;
 import edu.iit.cs445.exception.DataNotFoundException;
 import edu.iit.cs445.usecases.CustomerManager;
 
 import javax.ws.rs.*;
+import javax.ws.rs.core.GenericEntity;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import java.util.List;
@@ -22,23 +23,25 @@ public class CustomerController {
 
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    public List<Customer> getAllCustomers(){
-        return cm.getAllCustomers();
+    public Response getAllCustomers() {
+
+        List<Customer> customerList = cm.getAllCustomers();
+        GenericEntity<List<Customer>> list = new GenericEntity<List<Customer>>(customerList){};
+        return Response.status(Response.Status.OK).entity(list).build();
     }
+
 
     @Path("/{cid}")
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     public Response getCustomer(@PathParam("cid") String cid){
-
-        if (cm.getCustomerById(cid) == null) {
-            throw new DataNotFoundException();
-        }
-        Customer c =cm.getCustomerById(cid);
-        return Response.status(Response.Status.OK).entity(c).build();
+        Customer customer =cm.getCustomerById(cid);         // if not find gcpid, throw DataNotFoundException
+        return Response.status(Response.Status.OK).entity(customer).build();
 
 
     }
+
+    /*
 
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
@@ -76,6 +79,8 @@ public class CustomerController {
         cm.updateCustomer(customer);
         return Response.status(Response.Status.OK).build();
         }
+
+        */
 
 
 }

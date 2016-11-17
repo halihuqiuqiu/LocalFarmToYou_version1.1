@@ -14,7 +14,6 @@ import java.util.Map;
 public class Manager {
     private Map<String, Catalog> catalogs= Database.getCatalogs();
 
-    ////
     public List<Catalog> getAllCatalogs() {
 
         return new ArrayList<Catalog>(catalogs.values());
@@ -36,6 +35,11 @@ public class Manager {
 
     public Catalog updateCatalog(Catalog catalog) {
 
+        String gcpid = catalog.getGcpid();
+        if (getCatalogById(gcpid)==null){
+            throw new DataNotFoundException();
+
+        }
         catalogs.put(catalog.getGcpid(), catalog);
         return catalog;
     }

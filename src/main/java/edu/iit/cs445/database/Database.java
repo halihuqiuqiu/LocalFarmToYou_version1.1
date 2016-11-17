@@ -14,8 +14,7 @@ import java.util.Map;
 public class Database {
     private static Map<String, Customer> customers = new HashMap<String, Customer>();
     private static Map<String, Catalog> catalogs = new HashMap<String, Catalog>();
-    private static Map<String, FarmerAccount> farmerAccounts= new HashMap<String, FarmerAccount>();
-    private static Map<String, Map<String,Product>> farmerAccountsProudctsMap = new HashMap<String, Map<String, Product>>();
+    private static Map<String, FarmerAccount> farmerAccounts = new HashMap<String, FarmerAccount>();
 
 
     public static Map<String, Customer> getCustomers() {
@@ -30,7 +29,6 @@ public class Database {
         return farmerAccounts;
     }
 
-    public static Map<String, Map<String, Product>> getFarmerAccountsProudctsMap() {
-        return farmerAccountsProudctsMap;
-    }
 }
+
+
