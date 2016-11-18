@@ -2,33 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7543209a-61a8-4c6b-89d3-ef5f85693d1a" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/edu/iit/cs445/exception/UnprocessableEntityException.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/edu/iit/cs445/exception/UnprocessableEntityExceptionMapper.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/edu/iit/cs445/controller/CustomerController$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/edu/iit/cs445/controller/FarmerAccountController$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/localfarm/WEB-INF/classes/edu/iit/cs445/controller/CustomerController$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/localfarm/WEB-INF/classes/edu/iit/cs445/controller/FarmerAccountController$1.class" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/edu/iit/cs445/controller/CustomerController.class" afterPath="$PROJECT_DIR$/target/classes/edu/iit/cs445/controller/CustomerController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/edu/iit/cs445/controller/FarmerAccountController.class" afterPath="$PROJECT_DIR$/target/classes/edu/iit/cs445/controller/FarmerAccountController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/edu/iit/cs445/usecases/FarmerAccountManager.class" afterPath="$PROJECT_DIR$/target/classes/edu/iit/cs445/usecases/FarmerAccountManager.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/edu/iit/cs445/usecases/FarmerProductManager.class" afterPath="$PROJECT_DIR$/target/classes/edu/iit/cs445/usecases/FarmerProductManager.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/edu/iit/cs445/usecases/OrderManager.class" afterPath="$PROJECT_DIR$/target/classes/edu/iit/cs445/usecases/OrderManager.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/localfarm/WEB-INF/classes/edu/iit/cs445/controller/CustomerController.class" afterPath="$PROJECT_DIR$/target/localfarm/WEB-INF/classes/edu/iit/cs445/controller/CustomerController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/localfarm/WEB-INF/classes/edu/iit/cs445/controller/FarmerAccountController.class" afterPath="$PROJECT_DIR$/target/localfarm/WEB-INF/classes/edu/iit/cs445/controller/FarmerAccountController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/localfarm/WEB-INF/classes/edu/iit/cs445/usecases/FarmerAccountManager.class" afterPath="$PROJECT_DIR$/target/localfarm/WEB-INF/classes/edu/iit/cs445/usecases/FarmerAccountManager.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/localfarm/WEB-INF/classes/edu/iit/cs445/usecases/FarmerProductManager.class" afterPath="$PROJECT_DIR$/target/localfarm/WEB-INF/classes/edu/iit/cs445/usecases/FarmerProductManager.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/localfarm/WEB-INF/classes/edu/iit/cs445/usecases/OrderManager.class" afterPath="$PROJECT_DIR$/target/localfarm/WEB-INF/classes/edu/iit/cs445/usecases/OrderManager.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/edu/iit/cs445/controller/CustomerController.java" afterPath="$PROJECT_DIR$/src/main/java/edu/iit/cs445/controller/CustomerController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/edu/iit/cs445/controller/FarmerAccountController.java" afterPath="$PROJECT_DIR$/src/main/java/edu/iit/cs445/controller/FarmerAccountController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/edu/iit/cs445/controller/ManagerController.java" afterPath="$PROJECT_DIR$/src/main/java/edu/iit/cs445/controller/ManagerController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/edu/iit/cs445/database/Database.java" afterPath="$PROJECT_DIR$/src/main/java/edu/iit/cs445/database/Database.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/edu/iit/cs445/entitites/Customer.java" afterPath="$PROJECT_DIR$/src/main/java/edu/iit/cs445/entitites/Customer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/edu/iit/cs445/exception/BadRequestExceptionMapper.java" afterPath="$PROJECT_DIR$/src/main/java/edu/iit/cs445/exception/BadRequestExceptionMapper.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/edu/iit/cs445/exception/DataNotFoundExceptionMapper.java" afterPath="$PROJECT_DIR$/src/main/java/edu/iit/cs445/exception/DataNotFoundExceptionMapper.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/edu/iit/cs445/exception/GenericExceptionMapper.java" afterPath="$PROJECT_DIR$/src/main/java/edu/iit/cs445/exception/GenericExceptionMapper.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/edu/iit/cs445/usecases/FarmerAccountManager.java" afterPath="$PROJECT_DIR$/src/main/java/edu/iit/cs445/usecases/FarmerAccountManager.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/edu/iit/cs445/usecases/FarmerProductManager.java" afterPath="$PROJECT_DIR$/src/main/java/edu/iit/cs445/usecases/FarmerProductManager.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/edu/iit/cs445/usecases/HelperDate.java" afterPath="$PROJECT_DIR$/src/main/java/edu/iit/cs445/usecases/HelperDate.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/edu/iit/cs445/usecases/OrderManager.java" afterPath="$PROJECT_DIR$/src/main/java/edu/iit/cs445/usecases/OrderManager.java" />
     </list>
     <ignored path="HelloHelloRest.iws" />
@@ -55,22 +31,55 @@
       <file leaf-file-name="CustomerController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/edu/iit/cs445/controller/CustomerController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="94">
+            <state relative-caret-position="179">
               <caret line="122" column="34" selection-start-line="122" selection-start-column="34" selection-end-line="122" selection-end-column="34" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UnprocessableEntityExceptionMapper.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/edu/iit/cs445/exception/UnprocessableEntityExceptionMapper.java">
+      <file leaf-file-name="CustomerManager.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/edu/iit/cs445/usecases/CustomerManager.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="12" column="35" selection-start-line="12" selection-start-column="35" selection-end-line="12" selection-end-column="35" />
+            <state relative-caret-position="-161">
+              <caret line="14" column="32" selection-start-line="14" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Database.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/edu/iit/cs445/database/Database.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="264">
+              <caret line="41" column="52" selection-start-line="41" selection-start-column="52" selection-end-line="41" selection-end-column="52" />
               <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#366#367#0" expanded="true" />
-                <element signature="e#417#418#0" expanded="true" />
+                <element signature="e#694#709#0" expanded="true" />
+                <element signature="e#1146#1147#0" expanded="true" />
+                <element signature="e#1180#1181#0" expanded="true" />
+                <element signature="e#1265#1266#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FarmerProductManager.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/edu/iit/cs445/usecases/FarmerProductManager.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="170">
+              <caret line="20" column="12" selection-start-line="20" selection-start-column="12" selection-end-line="20" selection-end-column="12" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FarmerAccountManager.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/edu/iit/cs445/usecases/FarmerAccountManager.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="578">
+              <caret line="42" column="68" selection-start-line="42" selection-start-column="68" selection-end-line="42" selection-end-column="68" />
+              <folding>
+                <element signature="e#1691#1706#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -79,7 +88,7 @@
       <file leaf-file-name="ManagerController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/edu/iit/cs445/controller/ManagerController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="162">
+            <state relative-caret-position="757">
               <caret line="73" column="34" selection-start-line="73" selection-start-column="34" selection-end-line="73" selection-end-column="34" />
               <folding />
             </state>
@@ -89,8 +98,20 @@
       <file leaf-file-name="OrderManager.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/edu/iit/cs445/usecases/OrderManager.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="36" column="111" selection-start-line="36" selection-start-column="111" selection-end-line="36" selection-end-column="111" />
+            <state relative-caret-position="111">
+              <caret line="66" column="46" selection-start-line="66" selection-start-column="46" selection-end-line="66" selection-end-column="46" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="HelperDate.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/edu/iit/cs445/usecases/HelperDate.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="366">
+              <caret line="30" column="6" selection-start-line="30" selection-start-column="6" selection-end-line="30" selection-end-column="6" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -101,8 +122,8 @@
       <file leaf-file-name="Customer.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/edu/iit/cs445/entitites/Customer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="935">
-              <caret line="95" column="32" selection-start-line="95" selection-start-column="32" selection-end-line="95" selection-end-column="32" />
+            <state relative-caret-position="187">
+              <caret line="19" column="39" selection-start-line="19" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -113,56 +134,11 @@
       <file leaf-file-name="FarmerAccount.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/edu/iit/cs445/entitites/FarmerAccount.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1276">
-              <caret line="117" column="5" selection-start-line="96" selection-start-column="4" selection-end-line="117" selection-end-column="5" />
+            <state relative-caret-position="171">
+              <caret line="19" column="31" selection-start-line="19" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
               <folding>
                 <element signature="e#421#429#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Order.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/edu/iit/cs445/entitites/Order.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="22" column="20" selection-start-line="22" selection-start-column="20" selection-end-line="22" selection-end-column="20" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#425#438#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GenericExceptionMapper.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/edu/iit/cs445/exception/GenericExceptionMapper.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="FarmerAccountController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/edu/iit/cs445/controller/FarmerAccountController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="213">
-              <caret line="164" column="34" selection-start-line="164" selection-start-column="34" selection-end-line="164" selection-end-column="34" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DataNotFoundExceptionMapper.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/edu/iit/cs445/exception/DataNotFoundExceptionMapper.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -222,13 +198,10 @@
         <option value="$PROJECT_DIR$/src/main/java/edu/iit/cs445/usecases/CustomerManager.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/iit/cs445/entitites/OrderDetail.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/iit/cs445/entitites/Order.java" />
-        <option value="$PROJECT_DIR$/src/main/java/edu/iit/cs445/usecases/HelperDate.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/iit/cs445/entitites/Farm.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/iit/cs445/entitites/FarmerAccount.java" />
         <option value="$PROJECT_DIR$/test/edu/iit/cs445/usecases/CustomerManagerTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/iit/cs445/usecases/FarmerAccountManager.java" />
-        <option value="$PROJECT_DIR$/src/main/java/edu/iit/cs445/database/Database.java" />
-        <option value="$PROJECT_DIR$/src/main/java/edu/iit/cs445/usecases/FarmerProductManager.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/iit/cs445/entitites/Customer.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/iit/cs445/exception/UnprocessableEntityException.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/iit/cs445/exception/UnprocessableEntityExceptionMapper.java" />
@@ -238,6 +211,9 @@
         <option value="$PROJECT_DIR$/src/main/java/edu/iit/cs445/controller/CustomerController.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/iit/cs445/controller/FarmerAccountController.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/iit/cs445/controller/ManagerController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/iit/cs445/usecases/FarmerProductManager.java" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/iit/cs445/database/Database.java" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/iit/cs445/usecases/HelperDate.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/iit/cs445/usecases/OrderManager.java" />
       </list>
     </option>
@@ -572,6 +548,26 @@
       </option>
       <envs />
       <patterns />
+      <method />
+    </configuration>
+    <configuration default="false" name="HelperDate" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="edu.iit.cs445.usecases.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="MAIN_CLASS_NAME" value="edu.iit.cs445.usecases.HelperDate" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="LocalFarmToYou" />
+      <envs />
       <method />
     </configuration>
     <configuration default="true" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" ALTERNATIVE_JRE_ENABLED="false">
@@ -1093,13 +1089,15 @@
         </option>
       </method>
     </configuration>
-    <list size="2">
+    <list size="3">
       <item index="0" class="java.lang.String" itemvalue="Tomcat Server.hali" />
       <item index="1" class="java.lang.String" itemvalue="JUnit.CustomerManagerTest" />
+      <item index="2" class="java.lang.String" itemvalue="Application.HelperDate" />
     </list>
     <recent_temporary>
-      <list size="1">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.CustomerManagerTest" />
+      <list size="2">
+        <item index="0" class="java.lang.String" itemvalue="Application.HelperDate" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.CustomerManagerTest" />
       </list>
     </recent_temporary>
   </component>
@@ -1122,7 +1120,7 @@
       <workItem from="1478741136983" duration="433000" />
       <workItem from="1478741603225" duration="6574000" />
       <workItem from="1479164438702" duration="19008000" />
-      <workItem from="1479287561313" duration="39095000" />
+      <workItem from="1479287561313" duration="40749000" />
     </task>
     <servers />
   </component>
@@ -1138,7 +1136,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="69705000" />
+    <option name="totallyTimeSpent" value="71359000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="14" y="24" width="1400" height="767" extended-state="0" />
@@ -1154,7 +1152,7 @@
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3288889" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3298969" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32740742" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32740742" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1348,29 +1346,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/iit/cs445/usecases/CustomerManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="14" column="37" selection-start-line="14" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/edu/iit/cs445/entitites/Catalog.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
           <caret line="14" column="5" selection-start-line="14" selection-start-column="5" selection-end-line="18" selection-end-column="30" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/iit/cs445/usecases/HelperDate.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1439,39 +1419,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/iit/cs445/usecases/FarmerAccountManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="578">
-          <caret line="42" column="68" selection-start-line="42" selection-start-column="68" selection-end-line="42" selection-end-column="68" />
-          <folding>
-            <element signature="e#1691#1706#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/edu/iit/cs445/entitites/Product.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1139">
           <caret line="103" column="1" selection-start-line="103" selection-start-column="1" selection-end-line="103" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/iit/cs445/database/Database.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="36" column="57" selection-start-line="36" selection-start-column="57" selection-end-line="36" selection-end-column="57" />
-          <folding>
-            <element signature="e#612#629#0" expanded="true" />
-            <element signature="e#1100#1101#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/iit/cs445/usecases/FarmerProductManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="36" column="66" selection-start-line="36" selection-start-column="66" selection-end-line="36" selection-end-column="66" />
           <folding />
         </state>
       </provider>
@@ -1536,14 +1487,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/iit/cs445/controller/CustomerController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="94">
-          <caret line="122" column="34" selection-start-line="122" selection-start-column="34" selection-end-line="122" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/edu/iit/cs445/controller/FarmerAccountController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="213">
@@ -1551,14 +1494,6 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/iit/cs445/controller/ManagerController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="73" column="34" selection-start-line="73" selection-start-column="34" selection-end-line="73" selection-end-column="34" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1573,10 +1508,36 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/iit/cs445/controller/ManagerController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="757">
+          <caret line="73" column="34" selection-start-line="73" selection-start-column="34" selection-end-line="73" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/iit/cs445/usecases/FarmerAccountManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="578">
+          <caret line="42" column="68" selection-start-line="42" selection-start-column="68" selection-end-line="42" selection-end-column="68" />
+          <folding>
+            <element signature="e#1691#1706#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/iit/cs445/usecases/CustomerManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-161">
+          <caret line="14" column="32" selection-start-line="14" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/edu/iit/cs445/entitites/FarmerAccount.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1276">
-          <caret line="117" column="5" selection-start-line="96" selection-start-column="4" selection-end-line="117" selection-end-column="5" />
+        <state relative-caret-position="171">
+          <caret line="19" column="31" selection-start-line="19" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
           <folding>
             <element signature="e#421#429#0" expanded="true" />
           </folding>
@@ -1585,18 +1546,57 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/edu/iit/cs445/entitites/Customer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="935">
-          <caret line="95" column="32" selection-start-line="95" selection-start-column="32" selection-end-line="95" selection-end-column="32" />
+        <state relative-caret-position="187">
+          <caret line="19" column="39" selection-start-line="19" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/iit/cs445/usecases/FarmerProductManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="20" column="12" selection-start-line="20" selection-start-column="12" selection-end-line="20" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/iit/cs445/database/Database.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="41" column="52" selection-start-line="41" selection-start-column="52" selection-end-line="41" selection-end-column="52" />
+          <folding>
+            <element signature="e#694#709#0" expanded="true" />
+            <element signature="e#1146#1147#0" expanded="true" />
+            <element signature="e#1180#1181#0" expanded="true" />
+            <element signature="e#1265#1266#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/iit/cs445/usecases/HelperDate.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="366">
+          <caret line="30" column="6" selection-start-line="30" selection-start-column="6" selection-end-line="30" selection-end-column="6" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/iit/cs445/controller/CustomerController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="179">
+          <caret line="122" column="34" selection-start-line="122" selection-start-column="34" selection-end-line="122" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/edu/iit/cs445/usecases/OrderManager.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="36" column="111" selection-start-line="36" selection-start-column="111" selection-end-line="36" selection-end-column="111" />
+        <state relative-caret-position="111">
+          <caret line="66" column="46" selection-start-line="66" selection-start-column="46" selection-end-line="66" selection-end-column="46" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

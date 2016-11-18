@@ -13,7 +13,8 @@ public class Database {
     private static Map<String, Catalog> catalogs = new HashMap<String, Catalog>();
     private static Map<String, FarmerAccount> farmerAccounts = new HashMap<String, FarmerAccount>();
     private static Map<String, Manager> managerMap = Helper.getManagerMapWithSystemManager();
-    private static Map<String,Product> productsMap = new HashMap<String, Product>();
+    private static Map<String, Product> productsMap = new HashMap<String, Product>();
+    private static Map<String, Order> orderMap = new HashMap<String, Order>();
 
 
 
@@ -36,6 +37,10 @@ public class Database {
 
     public static Map<String, Product> getProductsMap() {
         return productsMap;
+    }
+
+    public static Map<String, Order> getOrderMap() {
+        return orderMap;
     }
 }
 

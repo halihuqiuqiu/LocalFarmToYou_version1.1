@@ -22,4 +22,11 @@ public class HelperDate {
         return sdf.format(c1.getTime());
 
     }
+
+    /*
+    public static void main(String[] args) {
+        System.out.println(getTodayDateyyyyMMdd());
+        System.out.println(getTomorrowDateyyyyMMdd());
+    }
+    */
 }

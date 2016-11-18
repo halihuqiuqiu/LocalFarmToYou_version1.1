@@ -18,7 +18,7 @@ import java.util.Map;
 public class FarmerProductManager {
     private Map<String, FarmerAccount> farmerAccounts= Database.getFarmerAccounts();
     private Map<String, Catalog> catalogs = Database.getCatalogs();
-    public List<Product> getAllFarmerProducts(String fid) {
+    public  List<Product> getAllFarmerProducts(String fid) {
         if(farmerAccounts.get(fid)==null){
             throw new DataNotFoundException();
         }

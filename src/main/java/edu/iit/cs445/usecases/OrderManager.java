@@ -38,13 +38,11 @@ public class OrderManager {
         }
 
 
-        order.setOid(String.valueOf(customers.get(cid).getOrderMap().size()+1));
+        order.setOid(String.valueOf(Database.getOrderMap().values().size()+1));
         order.setOrder_date(HelperDate.getTodayDateyyyyMMdd());
         order.setPlanned_delivery_date(HelperDate.getTomorrowDateyyyyMMdd());
         order.setActual_delivery_date("");
         order.setStatus("open");
-
-
 
         farm.setFid(order.getFid());
         order.setFarm_info(farm);
@@ -53,7 +51,7 @@ public class OrderManager {
 
         List<OrderDetail> orderDetails = order.getOrder_detail();
         for(OrderDetail orderDetail : orderDetails){
-            Product product = farmerAccount.getProductsMap().get(orderDetail.getFspid());
+            Product product = Database.getProductsMap().get(orderDetail.getFspid());
             orderDetail.setName(product.getName());
             double totalPerProduct = Double.parseDouble(orderDetail.getAmount()) *product.getPrice();
 
@@ -62,7 +60,7 @@ public class OrderManager {
 
             orderDetail.setLine_item_total(totalPerProduct);
 
-            totalProduct+=totalProduct;
+            totalProduct+=totalPerProduct;
 
         }
 
@@ -72,6 +70,8 @@ public class OrderManager {
 
 
         customers.get(cid).getOrderMap().put(order.getOid(),order);
+        Database.getOrderMap().put(order.getOid(),order);
+
         return order;
     }
 
