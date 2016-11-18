@@ -1,5 +1,6 @@
 package edu.iit.cs445.entitites;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import edu.iit.cs445.exception.BadRequestException;
 
 import java.security.PublicKey;
@@ -12,12 +13,11 @@ import java.util.Map;
  * Created by YongYang on 10/3/16.
  */
 public class FarmerAccount {
-
-    private String name;
     private String fid;
+    private String name;
     private Farm farm_info;
     private Farmer personal_info;
-    private List<String> delivers_to=new ArrayList<String>();
+    private ArrayList<String> delivers_to= new ArrayList<String>();
     private Map<String,Product> productsMap = new HashMap<String, Product>();
     private double delivery_charge;
     private List<ReportFarmer> reportFarmers= new ArrayList<ReportFarmer>();
@@ -27,7 +27,7 @@ public class FarmerAccount {
         this.delivery_charge=0.00;
     }
 
-    public FarmerAccount(String name, String fid, Farm farm_info, Farmer personal_info, List<String> delivers_to, Map<String, Product> productsMap, double delivery_charge, List<ReportFarmer> reportFarmers) {
+    public FarmerAccount(String name, String fid, Farm farm_info, Farmer personal_info, ArrayList<String> delivers_to, Map<String, Product> productsMap, double delivery_charge, List<ReportFarmer> reportFarmers) {
         this.name = name;
         this.fid = fid;
         this.farm_info = farm_info;
@@ -70,11 +70,11 @@ public class FarmerAccount {
         this.personal_info = personal_info;
     }
 
-    public List<String> getDelivers_to() {
+    public ArrayList<String> getDelivers_to() {
         return delivers_to;
     }
 
-    public void setDelivers_to(List<String> deliver_to) {
+    public void setDelivers_to(ArrayList<String> delivers_to) {
         this.delivers_to = delivers_to;
     }
 
