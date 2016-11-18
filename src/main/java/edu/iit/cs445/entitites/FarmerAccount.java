@@ -1,6 +1,7 @@
 package edu.iit.cs445.entitites;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
+import com.google.gson.annotations.Expose;
 import edu.iit.cs445.exception.BadRequestException;
 
 import java.security.PublicKey;
@@ -13,8 +14,8 @@ import java.util.Map;
  * Created by YongYang on 10/3/16.
  */
 public class FarmerAccount {
-    private String fid;
-    private String name;
+    @Expose private String fid;
+    @Expose private String name;
     private Farm farm_info;
     private Farmer personal_info;
     private ArrayList<String> delivers_to= new ArrayList<String>();
