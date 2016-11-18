@@ -1,7 +1,7 @@
 package edu.iit.cs445.controller;
 
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.serializer.SimplePropertyPreFilter;
@@ -10,11 +10,13 @@ import edu.iit.cs445.exception.*;
 import edu.iit.cs445.exception.BadRequestException;
 import edu.iit.cs445.usecases.FarmerAccountManager;
 import edu.iit.cs445.usecases.FarmerProductManager;
+import javassist.bytecode.stackmap.BasicBlock;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.GenericEntity;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -30,7 +32,7 @@ public class FarmerAccountController {
     @Path("/{fid}")
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    public Response getCustomer(@PathParam("fid") String fid) {
+    public Response getFarmerAccount(@PathParam("fid") String fid) {
 
         FarmerAccount farmerAccount = fam.getFarmerAccountById(fid); // if not find fid, throw DataNotFoundException
         SimplePropertyPreFilter filter = new SimplePropertyPreFilter(FarmerAccount.class, "fid", "farm_info", "personal_info", "delivers_to");
@@ -42,15 +44,23 @@ public class FarmerAccountController {
 
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    public Response getCustomerByZip(@QueryParam("zip") String zip) {
+    public Response getFarmerAccountByZip(@QueryParam("zip") String zip) {
         if (zip == null) {  //return all
             List<FarmerAccount> farmerAccountList = fam.getAllFarmerAccounts();
             SimplePropertyPreFilter filter = new SimplePropertyPreFilter(FarmerAccount.class, "fid", "name");
             String res = JSON.toJSONString(farmerAccountList,filter);
-            Gson prettyGson = new GsonBuilder().setPrettyPrinting().create();
-            String prettyJson = prettyGson.toJson(res);
 
-            return Response.status(200).entity(prettyJson).build();
+            ObjectMapper mapper = new ObjectMapper();
+
+            TypeReference<List<FarmerAccount>> mapType = new TypeReference<List<FarmerAccount>>() {};
+            String indented =null;
+            try {
+                List<FarmerAccount> json = mapper.readValue(res, mapType);
+                indented = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(json);
+            }catch (IOException e){
+            }
+            return Response.status(200).entity(indented).build();
+
         } else {
             List<FarmerAccount> result = fam.findFarmerAccountByZip(zip);
             SimplePropertyPreFilter filter = new SimplePropertyPreFilter(FarmerAccount.class, "fid", "name");
