@@ -34,7 +34,7 @@ public class CustomerController {
     public Response getAllCustomers() {
 
         List<Customer> customerList = cm.getAllCustomers();
-        SimplePropertyPreFilter filter = new SimplePropertyPreFilter(Customer.class, "cid","name","stree","zip","phone","email");
+        SimplePropertyPreFilter filter = new SimplePropertyPreFilter(Customer.class, "cid","name","street","zip","phone","email");
         String res = JSON.toJSONString(customerList, filter);
 
         ObjectMapper mapper = new ObjectMapper();
@@ -49,7 +49,7 @@ public class CustomerController {
         }
 
 
-        return Response.status(200).entity(res).build();
+        return Response.status(200).entity(indented).build();
     }
 
 
