@@ -9,7 +9,11 @@ import com.google.gson.JsonParser;
 import edu.iit.cs445.entitites.*;
 import edu.iit.cs445.usecases.CatalogManager;
 import edu.iit.cs445.usecases.MangerService;
+import groovy.servlet.AbstractHttpServlet;
 
+import javax.servlet.*;
+
+import javax.servlet.http.HttpServletResponse;
 import javax.ws.rs.*;
 import javax.ws.rs.core.GenericEntity;
 import javax.ws.rs.core.MediaType;
@@ -73,12 +77,13 @@ public class ManagerController {
     @Path("/accounts/{mid}")
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    public Response getManagerAccount(@PathParam("mid") String mid) {
+    public Response getManagerAccount(@PathParam("mid") String mid){
 
         Manager manager = ms.getManagerById(mid); // if not find fid, throw DataNotFoundException
 
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
         String prettyJson = gson.toJson(manager);
+
         return Response.status(200).entity(prettyJson).build();
 
 
