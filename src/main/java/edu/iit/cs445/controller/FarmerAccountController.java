@@ -1,10 +1,11 @@
 package edu.iit.cs445.controller;
 
-import com.fasterxml.jackson.core.type.TypeReference;
-import com.fasterxml.jackson.databind.ObjectMapper;
-
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.serializer.SimplePropertyPreFilter;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.*;
+
 import edu.iit.cs445.entitites.*;
 import edu.iit.cs445.exception.*;
 import edu.iit.cs445.exception.BadRequestException;
@@ -50,16 +51,12 @@ public class FarmerAccountController {
             SimplePropertyPreFilter filter = new SimplePropertyPreFilter(FarmerAccount.class, "fid", "name");
             String res = JSON.toJSONString(farmerAccountList,filter);
 
-            ObjectMapper mapper = new ObjectMapper();
+            Gson gson = new GsonBuilder().setPrettyPrinting().create();
+            JsonParser jp = new JsonParser();
+            JsonElement je = jp.parse(res);
+            String prettyJson = gson.toJson(je);
 
-            TypeReference<List<FarmerAccount>> mapType = new TypeReference<List<FarmerAccount>>() {};
-            String indented =null;
-            try {
-                List<FarmerAccount> json = mapper.readValue(res, mapType);
-                indented = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(json);
-            }catch (IOException e){
-            }
-            return Response.status(200).entity(indented).build();
+            return Response.status(200).entity(prettyJson).build();
 
         } else {
             List<FarmerAccount> result = fam.findFarmerAccountByZip(zip);
