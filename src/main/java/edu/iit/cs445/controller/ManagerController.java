@@ -54,7 +54,7 @@ public class ManagerController {
     public Response addCustomer(@PathParam("gcpid") String gcpid, Catalog catalog) {
         catalog.setGcpid(gcpid);
         manager.updateCatalog(catalog);   // if not find gcpid, throw DataNotFoundException
-        return Response.status(201).build();
+        return Response.status(200).build();
     }
 
     @GET

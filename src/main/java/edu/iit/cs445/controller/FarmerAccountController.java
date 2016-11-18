@@ -8,17 +8,14 @@ import com.google.gson.*;
 
 import edu.iit.cs445.entitites.*;
 import edu.iit.cs445.exception.*;
-import edu.iit.cs445.exception.BadRequestException;
 import edu.iit.cs445.usecases.FarmerAccountManager;
 import edu.iit.cs445.usecases.FarmerProductManager;
-import javassist.bytecode.stackmap.BasicBlock;
+import edu.iit.cs445.usecases.MakeReportFarmerForDelivery;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.GenericEntity;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
-import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -187,6 +184,20 @@ public class FarmerAccountController {
         List<ReportFarmer> reportFarmersList= farmerAccount.returnAllKindReports();
         GenericEntity<List<ReportFarmer>> list = new GenericEntity<List<ReportFarmer>>(reportFarmersList){};
         return Response.status(200).entity(list).build();
+
+
+    }
+
+    @Path("/{fid}/reports/{frid}")
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response getReports(@PathParam("fid") String fid, @PathParam("frid") String frid) {
+        FarmerAccount farmerAccount=fam.getFarmerAccountById(fid);// if not find fid, throw DataNotFoundException
+        ReportFarmerForDelivey reportFarmerForDelivey = MakeReportFarmerForDelivery.returnReport(fid, frid);
+
+        Gson gson = new GsonBuilder().setPrettyPrinting().create();
+        String prettyJson = gson.toJson(reportFarmerForDelivey);
+        return Response.status(200).entity(prettyJson).build();
 
 
     }
