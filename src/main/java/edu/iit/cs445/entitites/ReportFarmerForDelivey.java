@@ -9,15 +9,15 @@ import java.util.List;
 public class ReportFarmerForDelivey {
     private String frid;
     private String name;
-    private List<Order> orderList = new ArrayList<Order>();
+    private List<Order> orders = new ArrayList<Order>();
 
     public ReportFarmerForDelivey() {
     }
 
-    public ReportFarmerForDelivey(String frid, String name, List<Order> orderList) {
+    public ReportFarmerForDelivey(String frid, String name, List<Order> orders) {
         this.frid = frid;
         this.name = name;
-        this.orderList = orderList;
+        this.orders = orders;
     }
 
     public String getFrid() {
@@ -37,10 +37,10 @@ public class ReportFarmerForDelivey {
     }
 
     public List<Order> getOrderList() {
-        return orderList;
+        return orders;
     }
 
-    public void setOrderList(List<Order> orderList) {
-        this.orderList = orderList;
+    public void setOrders(List<Order> orders) {
+        this.orders = orders;
     }
 }

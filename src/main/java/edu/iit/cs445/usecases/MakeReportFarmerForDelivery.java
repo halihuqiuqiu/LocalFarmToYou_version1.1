@@ -55,7 +55,7 @@ public class MakeReportFarmerForDelivery {
 
         }
 
-        reportFarmerForDelivey.setOrderList(orders);
+        reportFarmerForDelivey.setOrders(orders);
 
         return reportFarmerForDelivey;
     }

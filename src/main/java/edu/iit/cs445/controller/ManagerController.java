@@ -35,8 +35,9 @@ public class ManagerController {
     public Response getAllCatalog() {
 
         List<Catalog> catalogList = manager.getAllCatalogs();
-        GenericEntity<List<Catalog>> list = new GenericEntity<List<Catalog>>(catalogList){};
-        return Response.status(200).status(Response.Status.OK).entity(list).build();
+        Gson gson = new GsonBuilder().setPrettyPrinting().create();
+        String prettyJson = gson.toJson(catalogList);
+        return Response.status(200).status(Response.Status.OK).entity(prettyJson).build();
 
     }
 

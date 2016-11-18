@@ -35,7 +35,13 @@ public class FarmerAccountController {
         FarmerAccount farmerAccount = fam.getFarmerAccountById(fid); // if not find fid, throw DataNotFoundException
         SimplePropertyPreFilter filter = new SimplePropertyPreFilter(FarmerAccount.class, "fid", "farm_info", "personal_info", "delivers_to");
         String res = JSON.toJSONString(farmerAccount,filter);
-        return Response.status(200).entity(res).build();
+
+        Gson gson = new GsonBuilder().setPrettyPrinting().create();
+        JsonParser jp = new JsonParser();
+        JsonElement je = jp.parse(res);
+        String prettyJson = gson.toJson(je);
+        
+        return Response.status(200).entity(prettyJson).build();
 
 
     }
@@ -74,6 +80,7 @@ public class FarmerAccountController {
         fam.addFarmerAccount(farmerAccount);
         SimplePropertyPreFilter filter = new SimplePropertyPreFilter(FarmerAccount.class, "fid");
         String res = JSON.toJSONString(farmerAccount, filter);
+
         return Response.status(201).entity(res).build();
     }
 
