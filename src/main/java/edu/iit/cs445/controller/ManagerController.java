@@ -66,7 +66,7 @@ public class ManagerController {
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
         String prettyJson = gson.toJson(managerList);
 
-        return Response.status(200).status(Response.Status.OK).entity(prettyJson).build();
+        return Response.status(Response.Status.OK).entity(prettyJson).build();
 
     }
 
@@ -79,7 +79,7 @@ public class ManagerController {
 
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
         String prettyJson = gson.toJson(manager);
-        return Response.status(200).status(Response.Status.OK).entity(prettyJson).build();
+        return Response.status(Response.Status.OK).entity(prettyJson).build();
 
 
     }
