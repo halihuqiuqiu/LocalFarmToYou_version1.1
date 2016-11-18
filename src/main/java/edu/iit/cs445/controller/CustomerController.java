@@ -31,7 +31,7 @@ public class CustomerController {
         List<Customer> customerList = cm.getAllCustomers();
         SimplePropertyPreFilter filter = new SimplePropertyPreFilter(Customer.class, "cid","name","stree","zip","phone","email");
         String res = JSON.toJSONString(customerList, filter);
-        return Response.status(200).entity(res).build();
+        return Response.status(200).status(Response.Status.OK).entity(res).build();
     }
 
 
