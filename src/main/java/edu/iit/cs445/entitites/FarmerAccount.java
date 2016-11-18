@@ -2,6 +2,7 @@ package edu.iit.cs445.entitites;
 
 import edu.iit.cs445.exception.BadRequestException;
 
+import java.security.PublicKey;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -19,13 +20,14 @@ public class FarmerAccount {
     private List<String> delivers_to=new ArrayList<String>();
     private Map<String,Product> productsMap = new HashMap<String, Product>();
     private double delivery_charge;
+    private List<ReportFarmer> reportFarmers= new ArrayList<ReportFarmer>();
 
 
     public FarmerAccount() {
         this.delivery_charge=0.00;
     }
 
-    public FarmerAccount(String name, String fid, Farm farm_info, Farmer personal_info, List<String> delivers_to, Map<String, Product> productsMap, double delivery_charge) {
+    public FarmerAccount(String name, String fid, Farm farm_info, Farmer personal_info, List<String> delivers_to, Map<String, Product> productsMap, double delivery_charge, List<ReportFarmer> reportFarmers) {
         this.name = name;
         this.fid = fid;
         this.farm_info = farm_info;
@@ -33,6 +35,7 @@ public class FarmerAccount {
         this.delivers_to = delivers_to;
         this.productsMap = productsMap;
         this.delivery_charge = delivery_charge;
+        this.reportFarmers = reportFarmers;
     }
 
     public String getName() {
@@ -94,6 +97,14 @@ public class FarmerAccount {
         this.delivery_charge = delivery_charge;
     }
 
+    public List<ReportFarmer> getReportFarmers() {
+        return reportFarmers;
+    }
+
+    public void setReportFarmers(List<ReportFarmer> reportFarmers) {
+        this.reportFarmers = reportFarmers;
+    }
+
     public void validateEntity(){
         boolean b = getFarm_info()==null ||
                 getPersonal_info()==null ||
@@ -115,6 +126,15 @@ public class FarmerAccount {
         if(c||d){
             throw new BadRequestException();
         }
+    }
+
+    public List<ReportFarmer> returnAllKindReports(){
+        reportFarmers.add(new ReportFarmer("1","Orders to deliver today"));
+        reportFarmers.add(new ReportFarmer("2","Orders to deliver tomorrow"));
+        reportFarmers.add(new ReportFarmer("3","Revenue report"));
+        reportFarmers.add(new ReportFarmer("4","Orders delivery report"));
+        return reportFarmers;
+
     }
 
 }

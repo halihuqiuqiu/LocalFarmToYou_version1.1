@@ -1,5 +1,8 @@
 package edu.iit.cs445.entitites;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Created by YongYang on 11/16/16.
  */
@@ -69,5 +72,17 @@ public class Manager {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public static List<ReportManager> returnAllKindReports(){
+        List<ReportManager> reportManagersList = new ArrayList<ReportManager>();
+        reportManagersList.add(new ReportManager("1","Orders placed today"));
+        reportManagersList.add(new ReportManager("2","Orders placed yesterday"));
+
+        reportManagersList.add(new ReportManager("3","Revenue for previous month"));
+        reportManagersList.add(new ReportManager("4","Revenue yesterday"));
+        reportManagersList.add(new ReportManager("5","Revenue yesterday by zip code"));
+
+        return reportManagersList;
     }
 }

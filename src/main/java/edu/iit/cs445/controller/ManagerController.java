@@ -2,9 +2,7 @@ package edu.iit.cs445.controller;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.serializer.SimplePropertyPreFilter;
-import edu.iit.cs445.entitites.Catalog;
-import edu.iit.cs445.entitites.FarmerAccount;
-import edu.iit.cs445.entitites.Manager;
+import edu.iit.cs445.entitites.*;
 import edu.iit.cs445.usecases.CatalogManager;
 import edu.iit.cs445.usecases.MangerService;
 
@@ -61,7 +59,7 @@ public class ManagerController {
     public Response getAllManagerAccounts() {
         List<Manager> managerList = ms.getAllManagers();
         GenericEntity<List<Manager>> list = new GenericEntity<List<Manager>>(managerList){};
-        return Response.status(201).entity(list).build();
+        return Response.status(200).entity(list).build();
 
     }
 
@@ -71,7 +69,18 @@ public class ManagerController {
     public Response getManagerAccount(@PathParam("mid") String mid) {
 
         Manager manager = ms.getManagerById(mid); // if not find fid, throw DataNotFoundException
-        return Response.status(201).entity(manager).build();
+        return Response.status(200).entity(manager).build();
+
+
+    }
+
+    @Path("/reports")
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response getReports() {
+        List<ReportManager> reportList= Manager.returnAllKindReports();
+        GenericEntity<List<ReportManager>> list = new GenericEntity<List<ReportManager>>(reportList){};
+        return Response.status(200).entity(list).build();
 
 
     }

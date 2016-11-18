@@ -81,6 +81,7 @@ public class FarmerProductManager {
             original.setName(name);
         }
 
+        Database.getProductsMap().put(product.getFspid(),original);
         farmerAccounts.get(fid).getProductsMap().put(product.getFspid(),original);
         return product;
     }

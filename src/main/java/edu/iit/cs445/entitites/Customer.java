@@ -10,7 +10,7 @@ import java.util.Map;
  * Created by YongYang on 11/4/16.
  */
 
-public class Customer {
+public class Customer implements Cloneable{
     private String cid;
     private String name;
     private String street;
@@ -30,6 +30,18 @@ public class Customer {
         this.phone = phone;
         this.email = email;
         this.orderMap = orderMap;
+    }
+
+
+    @Override
+    public Object clone() {
+        Customer customer = null;
+        try{
+            customer =(Customer)super.clone();
+        }catch (CloneNotSupportedException e){
+
+        }
+        return customer;
     }
 
     public String getCid() {

@@ -85,10 +85,24 @@ public class OrderManager {
 
     public void cancelOrder(String cid, Order order){
         String oid = order.getOid();
-        Order original = getCustomerOrderById(cid, oid);
-
+        if (customers.get(cid)==null||customers.get(cid).getOrderMap().get(oid)==null) {
+            throw new DataNotFoundException();
+        }
         if(order.getStatus().equals("cancelled")){
-            original.setStatus("cancelled");
+            getCustomerOrderById(cid, oid).setStatus("cancelled");
+            Database.getOrderMap().get(oid).setStatus("delivered");
+        }
+    }
+
+    public void deliveredOrder(Order order){
+        String oid = order.getOid();
+        if (Database.getOrderMap().get(oid)==null) {
+            throw new DataNotFoundException();
+        }
+        String cid = Database.getOrderMap().get(oid).getCid();
+        if(order.getStatus().equals("delivered")){
+            getCustomerOrderById(cid, oid).setStatus("delivered");
+            Database.getOrderMap().get(oid).setStatus("delivered");
         }
     }
 

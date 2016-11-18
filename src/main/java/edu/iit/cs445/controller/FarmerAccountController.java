@@ -1,5 +1,8 @@
 package edu.iit.cs445.controller;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.serializer.SimplePropertyPreFilter;
 import edu.iit.cs445.entitites.*;
@@ -44,7 +47,10 @@ public class FarmerAccountController {
             List<FarmerAccount> farmerAccountList = fam.getAllFarmerAccounts();
             SimplePropertyPreFilter filter = new SimplePropertyPreFilter(FarmerAccount.class, "fid", "name");
             String res = JSON.toJSONString(farmerAccountList,filter);
-            return Response.status(200).entity(res).build();
+            Gson prettyGson = new GsonBuilder().setPrettyPrinting().create();
+            String prettyJson = prettyGson.toJson(res);
+
+            return Response.status(200).entity(prettyJson).build();
         } else {
             List<FarmerAccount> result = fam.findFarmerAccountByZip(zip);
             SimplePropertyPreFilter filter = new SimplePropertyPreFilter(FarmerAccount.class, "fid", "name");
@@ -163,6 +169,17 @@ public class FarmerAccountController {
         SimplePropertyPreFilter filter = new SimplePropertyPreFilter(FarmerAccount.class,"delivery_charge");
         String res = JSON.toJSONString(farmerAccount,filter);
         return Response.status(200).entity(res).build();
+
+
+    }
+    @Path("/{fid}/reports")
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response getReports(@PathParam("fid") String fid) {
+        FarmerAccount farmerAccount=fam.getFarmerAccountById(fid);// if not find fid, throw DataNotFoundException
+        List<ReportFarmer> reportFarmersList= farmerAccount.returnAllKindReports();
+        GenericEntity<List<ReportFarmer>> list = new GenericEntity<List<ReportFarmer>>(reportFarmersList){};
+        return Response.status(200).entity(list).build();
 
 
     }
