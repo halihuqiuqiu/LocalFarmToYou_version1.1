@@ -13,6 +13,6 @@ public class GenericExceptionMapper implements ExceptionMapper<Throwable> {
 
     public Response toResponse(Throwable throwable) {
 
-        return Response.status(Response.Status.INTERNAL_SERVER_ERROR).build();
+        return Response.status(500).build();
     }
 }

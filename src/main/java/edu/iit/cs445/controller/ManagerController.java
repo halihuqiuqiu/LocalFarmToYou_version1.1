@@ -30,7 +30,7 @@ public class ManagerController {
 
         List<Catalog> catalogList = manager.getAllCatalogs();
         GenericEntity<List<Catalog>> list = new GenericEntity<List<Catalog>>(catalogList){};
-        return Response.status(Response.Status.OK).entity(list).build();
+        return Response.status(200).entity(list).build();
 
     }
 
@@ -42,7 +42,7 @@ public class ManagerController {
         manager.addCatalog(catalog);
         SimplePropertyPreFilter filter = new SimplePropertyPreFilter(Catalog.class, "gcpid");
         String res = JSON.toJSONString(catalog, filter);
-        return Response.status(Response.Status.CREATED).entity(res).build();
+        return Response.status(201).entity(res).build();
     }
 
     @Path("/catalog/{gcpid}")
@@ -52,7 +52,7 @@ public class ManagerController {
     public Response addCustomer(@PathParam("gcpid") String gcpid, Catalog catalog) {
         catalog.setGcpid(gcpid);
         manager.updateCatalog(catalog);   // if not find gcpid, throw DataNotFoundException
-        return Response.status(Response.Status.OK).build();
+        return Response.status(201).build();
     }
 
     @GET
@@ -61,7 +61,7 @@ public class ManagerController {
     public Response getAllManagerAccounts() {
         List<Manager> managerList = ms.getAllManagers();
         GenericEntity<List<Manager>> list = new GenericEntity<List<Manager>>(managerList){};
-        return Response.status(Response.Status.OK).entity(list).build();
+        return Response.status(201).entity(list).build();
 
     }
 
@@ -71,7 +71,7 @@ public class ManagerController {
     public Response getManagerAccount(@PathParam("mid") String mid) {
 
         Manager manager = ms.getManagerById(mid); // if not find fid, throw DataNotFoundException
-        return Response.status(Response.Status.OK).entity(manager).build();
+        return Response.status(201).entity(manager).build();
 
 
     }

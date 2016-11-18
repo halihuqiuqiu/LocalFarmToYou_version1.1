@@ -10,6 +10,6 @@ import javax.ws.rs.ext.Provider;
 @Provider
 public class BadRequestExceptionMapper implements ExceptionMapper<BadRequestException> {
     public Response toResponse(BadRequestException e) {
-        return Response.status(Response.Status.BAD_REQUEST).build();
+        return Response.status(400).build();
     }
 }

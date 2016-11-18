@@ -29,15 +29,13 @@ public class FarmerProductManager {
         if(farmerAccounts.get(fid)==null){
             throw new DataNotFoundException();
         }
-        product.setFspid(String.valueOf(farmerAccounts.get(fid).getProductsMap().size()+1));
+        product.setFspid(String.valueOf(Database.getProductsMap().values().size()+1));
 
         String name = catalogs.get(product.getGcpid()).getName();
 
         product.setName(name);
-        Product productbyCatalogName = product;
-        productbyCatalogName.setGcpid(null);
-
-        farmerAccounts.get(fid).getProductsMap().put(product.getFspid(),productbyCatalogName);
+        Database.getProductsMap().put(product.getFspid(),product);
+        farmerAccounts.get(fid).getProductsMap().put(product.getFspid(),product);
         return product;
     }
 
@@ -77,6 +75,11 @@ public class FarmerProductManager {
             }
         }
 
+        if(product.getGcpid()!=null){       //change  gcpid, name should also change
+            String name = catalogs.get(original.getGcpid()).getName();
+
+            original.setName(name);
+        }
 
         farmerAccounts.get(fid).getProductsMap().put(product.getFspid(),original);
         return product;

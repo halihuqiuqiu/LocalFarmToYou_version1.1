@@ -32,7 +32,7 @@ public class FarmerAccountController {
         FarmerAccount farmerAccount = fam.getFarmerAccountById(fid); // if not find fid, throw DataNotFoundException
         SimplePropertyPreFilter filter = new SimplePropertyPreFilter(FarmerAccount.class, "fid", "farm_info", "personal_info", "delivers_to");
         String res = JSON.toJSONString(farmerAccount,filter);
-        return Response.status(Response.Status.OK).entity(res).build();
+        return Response.status(200).entity(res).build();
 
 
     }
@@ -44,12 +44,12 @@ public class FarmerAccountController {
             List<FarmerAccount> farmerAccountList = fam.getAllFarmerAccounts();
             SimplePropertyPreFilter filter = new SimplePropertyPreFilter(FarmerAccount.class, "fid", "name");
             String res = JSON.toJSONString(farmerAccountList,filter);
-            return Response.status(Response.Status.OK).entity(res).build();
+            return Response.status(200).entity(res).build();
         } else {
             List<FarmerAccount> result = fam.findFarmerAccountByZip(zip);
             SimplePropertyPreFilter filter = new SimplePropertyPreFilter(FarmerAccount.class, "fid", "name");
             String res = JSON.toJSONString(result,filter);
-            return Response.status(Response.Status.OK).entity(res).build();
+            return Response.status(200).entity(res).build();
 
         }
     }
@@ -64,7 +64,7 @@ public class FarmerAccountController {
         fam.addFarmerAccount(farmerAccount);
         SimplePropertyPreFilter filter = new SimplePropertyPreFilter(FarmerAccount.class, "fid");
         String res = JSON.toJSONString(farmerAccount, filter);
-        return Response.status(Response.Status.CREATED).entity(res).build();
+        return Response.status(201).entity(res).build();
     }
 
     @Path("/{fid}")
@@ -75,7 +75,7 @@ public class FarmerAccountController {
         farmerAccount.setFid(fid);
         farmerAccount.validateEntity();
         fam.updateFarmerAccount(farmerAccount);    // if not find fid, throw DataNotFoundException
-        return Response.status(Response.Status.OK).build();
+        return Response.status(200).build();
     }
 
 
@@ -87,10 +87,10 @@ public class FarmerAccountController {
         if (fam.getFarmerAccountById(fid) == null) {
             throw new DataNotFoundException();
         }
-        List<Product> ProductList = fpm.getAllFarmerProducts(fid);
-        GenericEntity<List<Product>> list = new GenericEntity<List<Product>>(ProductList) {
-        };
-        return Response.status(Response.Status.OK).entity(list).build();
+        List<Product> productList = fpm.getAllFarmerProducts(fid);
+        SimplePropertyPreFilter filter = new SimplePropertyPreFilter(Product.class, "fspid","name", "note", "start_date", "end_date","price","product_unit","image");
+        String res = JSON.toJSONString(productList,filter);
+        return Response.status(200).entity(res).build();
 
 
     }
@@ -104,8 +104,11 @@ public class FarmerAccountController {
             throw new DataNotFoundException();
         }
         Product product = fpm.getFarmerProductById(fid, fspid);
+        SimplePropertyPreFilter filter = new SimplePropertyPreFilter(Product.class, "fspid","name", "note", "start_date", "end_date","price","product_unit","image");
+        String res = JSON.toJSONString(product,filter);
 
-        return Response.status(Response.Status.OK).entity(product).build();
+
+        return Response.status(200).entity(res).build();
 
 
     }
@@ -120,7 +123,7 @@ public class FarmerAccountController {
         fpm.addFarmerProdcut(fid, product); // if not find fid, throw DataNotFoundException
         SimplePropertyPreFilter filter = new SimplePropertyPreFilter(Product.class, "fspid");
         String res = JSON.toJSONString(product, filter);
-        return Response.status(Response.Status.CREATED).entity(res).build();
+        return Response.status(201).entity(res).build();
     }
 
     @POST
@@ -136,7 +139,7 @@ public class FarmerAccountController {
 
         product.setFspid(fspid);
         fpm.partialUpdateFarmerProduct(fid, product);
-        return Response.status(Response.Status.OK).build();
+        return Response.status(200).build();
     }
 
     @POST
@@ -149,7 +152,7 @@ public class FarmerAccountController {
 
         farmerAccount.setDelivery_charge(f.getDelivery_charge());
 
-        return Response.status(Response.Status.NO_CONTENT).build();
+        return Response.status(204).build();
     }
 
     @Path("/{fid}/delivery_charge")
@@ -159,7 +162,7 @@ public class FarmerAccountController {
         FarmerAccount farmerAccount=fam.getFarmerAccountById(fid);// if not find fid, throw DataNotFoundException
         SimplePropertyPreFilter filter = new SimplePropertyPreFilter(FarmerAccount.class,"delivery_charge");
         String res = JSON.toJSONString(farmerAccount,filter);
-        return Response.status(Response.Status.OK).entity(res).build();
+        return Response.status(200).entity(res).build();
 
 
     }

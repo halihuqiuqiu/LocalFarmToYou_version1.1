@@ -1,6 +1,8 @@
 package edu.iit.cs445.entitites;
 
 
+import edu.iit.cs445.exception.BadRequestException;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -84,5 +86,18 @@ public class Customer {
 
     public void setOrderMap(Map<String, Order> orderMap) {
         this.orderMap = orderMap;
+    }
+
+
+    public void validateEntity(){
+        boolean b = getName()==null||
+                getStreet()==null||
+                getPhone()==null||
+                getEmail()==null||
+                getZip()==null;
+
+        if(b){
+            throw new BadRequestException();
+        }
     }
 }
