@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7543209a-61a8-4c6b-89d3-ef5f85693d1a" name="Default" comment="" />
+    <list default="true" id="7543209a-61a8-4c6b-89d3-ef5f85693d1a" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+    </list>
     <ignored path="HelloHelloRest.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/out/" />
@@ -1111,7 +1113,7 @@
       <workItem from="1478741136983" duration="433000" />
       <workItem from="1478741603225" duration="6574000" />
       <workItem from="1479164438702" duration="19008000" />
-      <workItem from="1479287561313" duration="41204000" />
+      <workItem from="1479287561313" duration="41247000" />
     </task>
     <servers />
   </component>
@@ -1127,7 +1129,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="71814000" />
+    <option name="totallyTimeSpent" value="71857000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="14" y="24" width="1400" height="767" extended-state="0" />
