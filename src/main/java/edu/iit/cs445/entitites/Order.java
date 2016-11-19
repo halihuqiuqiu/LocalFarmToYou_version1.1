@@ -12,13 +12,11 @@ import java.util.List;
  */
 
 @JsonIgnoreProperties(value = { "cid","order_by", "delivery_address","farm_info","order_detail",
-" delivery_note", "note","products_total" ,"delivery_charge", "order_total"})
+        "note","products_total" ,"delivery_charge", "order_total"})
 
 public class Order implements Cloneable {
-    private String cid;
-    private Customer order_by;
-    private String delivery_address;
     @Expose private String oid;
+    private String cid;
     @Expose private String order_date;
     @Expose private String planned_delivery_date;
     @Expose private String actual_delivery_date;
@@ -27,6 +25,8 @@ public class Order implements Cloneable {
     @Expose private Farm farm_info;
     @Expose private List<OrderDetail> order_detail = new ArrayList<OrderDetail>();
     @Expose private String delivery_note;
+    private Customer order_by;
+    private String delivery_address;
     private String note;
     @Expose private double products_total;
     @Expose private double delivery_charge;

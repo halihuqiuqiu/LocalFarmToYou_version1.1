@@ -1,10 +1,7 @@
 package edu.iit.cs445.usecases;
 
 import edu.iit.cs445.database.Database;
-import edu.iit.cs445.entitites.Customer;
-import edu.iit.cs445.entitites.FarmerAccount;
-import edu.iit.cs445.entitites.Order;
-import edu.iit.cs445.entitites.ReportFarmerForDelivey;
+import edu.iit.cs445.entitites.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -28,29 +25,33 @@ public class MakeReportFarmerForDelivery {
             deliverDate = HelperDate.getTomorrowDateyyyyMMdd();
         }
 
-        List<Order> orders = new ArrayList<Order>();
+        List<OrderForReport> orders = new ArrayList<OrderForReport>();
         List<Order> orderList = new ArrayList<Order>(Database.getOrderMap().values());
         for(Order order: orderList){
             if(order.getFid().equals(fid)&& order.getPlanned_delivery_date().equals(deliverDate)){  //order of this fid and date
-                Order o = new Order();
-                o = (Order)order.clone();
-                o.setCid(null);
-                o.setFid(null);
-                o.setFarm_info(null);
-                o.setNote(o.getDelivery_note());
-                o.setDelivery_note(null);
+                OrderForReport o = new OrderForReport();
+                o.setOid(order.getOid());
+                o.setProducts_total(order.getProducts_total());
+                o.setDelivery_charge(order.getDelivery_charge());
+                o.setOrder_total(order.getOrder_total());
+                o.setStatus(order.getStatus());
+                o.setOrder_date(order.getOrder_date());
+                o.setPlanned_delivery_date(order.getPlanned_delivery_date());
+                o.setActual_delivery_date(order.getActual_delivery_date());
 
                 Customer customer = cm.getCustomerById(order.getCid());
+                CustomerForReport customerForReport = new CustomerForReport();
+                customerForReport.setName(customer.getName());
+                customerForReport.setEmail(customer.getEmail());
+                customerForReport.setPhone(customer.getPhone());
+
+                o.setOrder_by(customerForReport);
+
                 String address = customer.getStreet() + " " + customer.getZip();
                 o.setDelivery_address(address);
 
-                Customer customerToShow = (Customer) customer.clone();
-                customerToShow.setCid(null);
-                customerToShow.setZip(null);
-                customerToShow.setStreet(null);
-                customerToShow.setOrderMap(null);
-
-                o.setOrder_by(customerToShow);
+                o.setNote(order.getDelivery_note());
+                o.setOrder_detail(order.getOrder_detail());
 
                 orders.add(o);
 
