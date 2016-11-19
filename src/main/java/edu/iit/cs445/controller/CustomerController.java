@@ -103,8 +103,16 @@ public class CustomerController {
             throw new DataNotFoundException();
         }
         List<Order> orderList = om.getAllCustomerOrders(cid);
-        Gson gson = new GsonBuilder().excludeFieldsWithoutExposeAnnotation().setPrettyPrinting().create();
-        String json = gson.toJson(orderList);
+
+        ObjectMapper mapper = new ObjectMapper();
+        String json = null;
+        try{
+
+            json = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(orderList);
+
+        }catch (IOException e){
+
+        }
         return Response.status(200).entity(json).build();
 
 
@@ -116,18 +124,10 @@ public class CustomerController {
     public Response getCustomerOrderById(@PathParam("cid") String cid, @PathParam("oid") String oid) {
         Order order = om.getCustomerOrderById(cid, oid);
 
-        ObjectMapper mapper = new ObjectMapper();
-        String json = null;
-        try{
-
-            json = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(order);
-
-        }catch (IOException e){
-
-        }
+        Gson gson = new GsonBuilder().excludeFieldsWithoutExposeAnnotation().setPrettyPrinting().create();
+        String json = gson.toJson(order);
 
         return Response.status(200).entity(json).build();
-
 
     }
 

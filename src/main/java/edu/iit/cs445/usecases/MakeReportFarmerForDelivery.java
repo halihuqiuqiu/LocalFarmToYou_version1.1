@@ -42,20 +42,24 @@ public class MakeReportFarmerForDelivery {
 
                 Customer customer = cm.getCustomerById(order.getCid());
                 String address = customer.getStreet() + " " + customer.getZip();
-                order.setDelivery_address(address);
+                o.setDelivery_address(address);
 
                 Customer customerToShow = (Customer) customer.clone();
                 customerToShow.setCid(null);
                 customerToShow.setZip(null);
                 customerToShow.setStreet(null);
                 customerToShow.setOrderMap(null);
-                order.setOrder_by(customer);
+
+                o.setOrder_by(customerToShow);
+
+                orders.add(o);
 
             }
 
         }
 
         report.setOrders(orders);
+
 
         return report;
     }

@@ -7,6 +7,7 @@ import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import edu.iit.cs445.database.Database;
 import edu.iit.cs445.entitites.Customer;
 import edu.iit.cs445.entitites.FarmerAccount;
 import edu.iit.cs445.entitites.Order;
@@ -20,6 +21,7 @@ import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -31,12 +33,21 @@ public class SearchController {
     @Produces(MediaType.APPLICATION_JSON)
     public Response getAllCustomers(@QueryParam("topic") String topic, @QueryParam("key") String key) {
         if(topic.equals("customer")){
-            List<Customer> customerList = Search.getCustomersByKey(key);
-            Gson gson = new GsonBuilder().excludeFieldsWithoutExposeAnnotation().setPrettyPrinting().create();
-            String json = gson.toJson(customerList);
+            try {
+                List<Customer> customerList = Search.getCustomersByKey(key);
+                Gson gson = new GsonBuilder().excludeFieldsWithoutExposeAnnotation().setPrettyPrinting().create();
+                String json = gson.toJson(customerList);
 
 
-            return Response.status(200).entity(json).build();
+                return Response.status(200).entity(json).build();
+            }catch (Exception e){
+                List<Customer> customerList = new ArrayList<Customer>( Database.getCustomers().values());
+                Gson gson = new GsonBuilder().excludeFieldsWithoutExposeAnnotation().setPrettyPrinting().create();
+                String json = gson.toJson(customerList);
+                return Response.status(200).entity(json).build();
+
+            }
+
 
         }
 
