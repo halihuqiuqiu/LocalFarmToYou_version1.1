@@ -3,6 +3,7 @@ package edu.iit.cs445.entitites;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.google.gson.annotations.Expose;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -145,7 +146,12 @@ public class Order implements Cloneable {
     }
 
     public double getProducts_total() {
-        return products_total;
+
+        DecimalFormat df = new DecimalFormat("0.00");
+        Double d = Double.parseDouble(df.format(products_total));
+
+        return d;
+
     }
 
     public void setProducts_total(double products_total) {
@@ -153,7 +159,10 @@ public class Order implements Cloneable {
     }
 
     public double getDelivery_charge() {
-        return delivery_charge;
+        DecimalFormat df = new DecimalFormat("0.00");
+        Double d = Double.parseDouble(df.format(delivery_charge));
+
+        return d;
     }
 
     public void setDelivery_charge(double delivery_charge) {
@@ -161,7 +170,10 @@ public class Order implements Cloneable {
     }
 
     public double getOrder_total() {
-        return order_total;
+        DecimalFormat df = new DecimalFormat("0.00");
+        Double d = Double.parseDouble(df.format(order_total));
+
+        return d;
     }
 
     public void setOrder_total(double order_total) {

@@ -1,5 +1,7 @@
 package edu.iit.cs445.entitites;
 
+import java.text.DecimalFormat;
+
 /**
  * Created by YongYang on 11/17/16.
  */
@@ -54,7 +56,10 @@ public class OrderDetail {
     }
 
     public double getLine_item_total() {
-        return line_item_total;
+        DecimalFormat df = new DecimalFormat("0.00");
+        Double d = Double.parseDouble(df.format(line_item_total));
+
+        return d;
     }
 
     public void setLine_item_total(double line_item_total) {

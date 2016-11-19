@@ -95,10 +95,10 @@ public class FarmerAccount {
     }
 
     public double getDelivery_charge() {
-        DecimalFormat formatter = new DecimalFormat("0.00");
-        String aFormatted = formatter.format(delivery_charge);
+        DecimalFormat df = new DecimalFormat("0.00");
+        Double d = Double.parseDouble(df.format(delivery_charge));
 
-        return Double.valueOf(aFormatted);
+        return d;
     }
 
     public void setDelivery_charge(double delivery_charge) {

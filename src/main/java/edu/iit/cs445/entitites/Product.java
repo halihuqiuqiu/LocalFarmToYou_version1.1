@@ -2,6 +2,8 @@ package edu.iit.cs445.entitites;
 
 import com.google.gson.annotations.Expose;
 
+import java.text.DecimalFormat;
+
 /**
  * Created by YongYang on 11/7/16.
  */
@@ -81,7 +83,10 @@ public class Product {
     }
 
     public double getPrice() {
-        return price;
+        DecimalFormat df = new DecimalFormat("0.00");
+        Double d = Double.parseDouble(df.format(price));
+
+        return d;
     }
 
     public void setPrice(double price) {
