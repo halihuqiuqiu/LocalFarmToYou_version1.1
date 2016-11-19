@@ -8,6 +8,8 @@ import com.google.gson.JsonElement;
 import com.google.gson.JsonParser;
 import edu.iit.cs445.entitites.*;
 import edu.iit.cs445.usecases.CatalogManager;
+import edu.iit.cs445.usecases.MakeReportFarmerForDelivery;
+import edu.iit.cs445.usecases.MakeReportManagerForDelivery;
 import edu.iit.cs445.usecases.MangerService;
 import groovy.servlet.AbstractHttpServlet;
 
@@ -100,6 +102,17 @@ public class ManagerController {
 
         return Response.status(200).entity(prettyJson).build();
 
+
+    }
+    @Path("/reports/{mrid}")
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response getReportById(@PathParam("mrid") String mrid) {
+        ReportManagerForDelivery report = MakeReportManagerForDelivery.makeReport(mrid);
+        Gson gson = new GsonBuilder().setPrettyPrinting().create();
+        String json = gson.toJson(report);
+
+        return Response.status(200).entity(json).build();
 
     }
 

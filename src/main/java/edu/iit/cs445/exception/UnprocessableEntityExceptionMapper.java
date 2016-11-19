@@ -10,7 +10,7 @@ import javax.ws.rs.ext.Provider;
 @Provider
 public class UnprocessableEntityExceptionMapper implements ExceptionMapper<UnprocessableEntityException> {
     public Response toResponse(UnprocessableEntityException e) {
-        return Response.status(422).entity(e.getMessage()).build();
+        return Response.status(422).entity("").build();
     }
 
 }

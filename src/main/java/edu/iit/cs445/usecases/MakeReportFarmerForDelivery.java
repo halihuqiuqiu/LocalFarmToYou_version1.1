@@ -45,10 +45,10 @@ public class MakeReportFarmerForDelivery {
                 order.setDelivery_address(address);
 
                 Customer customerToShow = (Customer) customer.clone();
-                customer.setCid(null);
-                customer.setZip(null);
-                customer.setStreet(null);
-                customer.setOrderMap(null);
+                customerToShow.setCid(null);
+                customerToShow.setZip(null);
+                customerToShow.setStreet(null);
+                customerToShow.setOrderMap(null);
                 order.setOrder_by(customer);
 
             }

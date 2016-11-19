@@ -197,8 +197,7 @@ public class FarmerAccountController {
     @Path("/{fid}/reports/{frid}")
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    public Response getReports(@PathParam("fid") String fid, @PathParam("frid") String frid) {
-        FarmerAccount farmerAccount=fam.getFarmerAccountById(fid);// if not find fid, throw DataNotFoundException
+    public Response getReportById(@PathParam("fid") String fid, @PathParam("frid") String frid) {
         ReportFarmerForDelivey reportFarmerForDelivey = MakeReportFarmerForDelivery.returnReport(fid, frid);
 
         Gson gson = new GsonBuilder().setPrettyPrinting().create();

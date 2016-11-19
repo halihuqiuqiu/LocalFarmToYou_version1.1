@@ -17,7 +17,7 @@ import java.util.Map;
 /**
  * Created by YongYang on 10/3/16.
  */
-@JsonIgnoreProperties(value = { "naem","productsMap", "delivery_charge","reportFarmers"})
+@JsonIgnoreProperties(value = { "name","productsMap", "delivery_charge","reportFarmers"})
 public class FarmerAccount {
     @Expose private String fid;
     @Expose private String name;
