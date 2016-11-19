@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7543209a-61a8-4c6b-89d3-ef5f85693d1a" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/edu/iit/cs445/controller/FarmerAccountController$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/localfarm/WEB-INF/classes/edu/iit/cs445/controller/FarmerAccountController$1.class" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/edu/iit/cs445/controller/FarmerAccountController.java" afterPath="$PROJECT_DIR$/src/main/java/edu/iit/cs445/controller/FarmerAccountController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/edu/iit/cs445/entitites/FarmerAccount.java" afterPath="$PROJECT_DIR$/src/main/java/edu/iit/cs445/entitites/FarmerAccount.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/edu/iit/cs445/entitites/Product.java" afterPath="$PROJECT_DIR$/src/main/java/edu/iit/cs445/entitites/Product.java" />
     </list>
     <ignored path="HelloHelloRest.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -54,19 +56,17 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FarmerAccountController.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="FarmerAccountController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/edu/iit/cs445/controller/FarmerAccountController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="73" column="51" selection-start-line="73" selection-start-column="51" selection-end-line="73" selection-end-column="51" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="-3051">
+              <caret line="16" column="21" selection-start-line="16" selection-start-column="21" selection-end-line="16" selection-end-column="21" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Catalog.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Catalog.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/edu/iit/cs445/entitites/Catalog.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="238">
@@ -116,18 +116,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Database.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/edu/iit/cs445/database/Database.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="476">
-              <caret line="41" column="52" selection-start-line="41" selection-start-column="52" selection-end-line="41" selection-end-column="52" />
-              <folding>
-                <element signature="e#1265#1266#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="CustomerManager.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/edu/iit/cs445/usecases/CustomerManager.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -141,8 +129,8 @@
       <file leaf-file-name="FarmerAccount.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/edu/iit/cs445/entitites/FarmerAccount.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="23" column="4" selection-start-line="23" selection-start-column="4" selection-end-line="23" selection-end-column="4" />
+            <state relative-caret-position="136">
+              <caret line="16" column="12" selection-start-line="16" selection-start-column="4" selection-end-line="16" selection-end-column="12" />
               <folding>
                 <element signature="e#570#578#0" expanded="true" />
                 <element signature="e#802#803#0" expanded="true" />
@@ -150,6 +138,16 @@
                 <element signature="e#2107#2108#0" expanded="true" />
                 <element signature="e#2153#2154#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Product.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/edu/iit/cs445/entitites/Product.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="221">
+              <caret line="15" column="40" selection-start-line="15" selection-start-column="40" selection-end-line="15" selection-end-column="40" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -190,7 +188,6 @@
         <option value="$PROJECT_DIR$/src/main/java/edu/iit/cs445/entitites/FarmerAccountIdName.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/iit/cs445/entitites/Catalog.java" />
         <option value="$PROJECT_DIR$/test/edu/iit/cs445/usecases/FarmerProductManagerTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/edu/iit/cs445/entitites/Product.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/iit/cs445/usecases/Manager.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/iit/cs445/usecases/CatalogManager.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/iit/cs445/usecases/MangerService.java" />
@@ -225,6 +222,7 @@
         <option value="$PROJECT_DIR$/src/main/java/edu/iit/cs445/controller/SearchController.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/iit/cs445/controller/CustomerController.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/iit/cs445/entitites/FarmerAccount.java" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/iit/cs445/entitites/Product.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/iit/cs445/controller/FarmerAccountController.java" />
       </list>
     </option>
@@ -1166,7 +1164,7 @@
       <workItem from="1479465233052" duration="358000" />
       <workItem from="1479465834687" duration="128000" />
       <workItem from="1479490460219" duration="1781000" />
-      <workItem from="1479495683849" duration="11352000" />
+      <workItem from="1479495683849" duration="12255000" />
     </task>
     <servers />
   </component>
@@ -1188,7 +1186,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="106645000" />
+    <option name="totallyTimeSpent" value="107548000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="14" y="24" width="1400" height="767" extended-state="0" />
@@ -1196,7 +1194,7 @@
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33037037" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33037037" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1351,13 +1349,6 @@
             <element signature="e#569#570#0" expanded="false" />
             <element signature="e#599#600#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/iit/cs445/entitites/Product.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1139">
-          <caret line="103" column="1" selection-start-line="103" selection-start-column="1" selection-end-line="103" selection-end-column="1" />
         </state>
       </provider>
     </entry>
@@ -1630,10 +1621,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/iit/cs445/entitites/Catalog.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="5" selection-start-line="14" selection-start-column="5" selection-end-line="18" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/edu/iit/cs445/entitites/FarmerAccount.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="23" column="4" selection-start-line="23" selection-start-column="4" selection-end-line="23" selection-end-column="4" />
+        <state relative-caret-position="136">
+          <caret line="16" column="12" selection-start-line="16" selection-start-column="4" selection-end-line="16" selection-end-column="12" />
           <folding>
             <element signature="e#570#578#0" expanded="true" />
             <element signature="e#802#803#0" expanded="true" />
@@ -1644,20 +1643,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/iit/cs445/controller/FarmerAccountController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/iit/cs445/entitites/Product.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
-          <caret line="73" column="51" selection-start-line="73" selection-start-column="51" selection-end-line="73" selection-end-column="51" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <caret line="15" column="40" selection-start-line="15" selection-start-column="40" selection-end-line="15" selection-end-column="40" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/iit/cs445/entitites/Catalog.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/iit/cs445/controller/FarmerAccountController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="5" selection-start-line="14" selection-start-column="5" selection-end-line="18" selection-end-column="30" />
+        <state relative-caret-position="-3051">
+          <caret line="16" column="21" selection-start-line="16" selection-start-column="21" selection-end-line="16" selection-end-column="21" />
           <folding />
         </state>
       </provider>

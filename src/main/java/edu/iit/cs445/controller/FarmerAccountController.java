@@ -3,12 +3,9 @@ package edu.iit.cs445.controller;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.serializer.SimplePropertyPreFilter;
 import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.SerializationFeature;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import com.google.gson.*;
 
 
 import edu.iit.cs445.entitites.*;
@@ -18,7 +15,6 @@ import edu.iit.cs445.usecases.FarmerProductManager;
 import edu.iit.cs445.usecases.MakeReportFarmerForDelivery;
 
 import javax.ws.rs.*;
-import javax.ws.rs.core.GenericEntity;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import java.io.IOException;
@@ -111,9 +107,11 @@ public class FarmerAccountController {
             throw new DataNotFoundException();
         }
         List<Product> productList = fpm.getAllFarmerProducts(fid);
-        SimplePropertyPreFilter filter = new SimplePropertyPreFilter(Product.class, "fspid","name", "note", "start_date", "end_date","price","product_unit","image");
-        String res = JSON.toJSONString(productList,filter);
-        return Response.status(200).entity(res).build();
+
+        Gson gson = new GsonBuilder().excludeFieldsWithoutExposeAnnotation().setPrettyPrinting().create();
+        String json = gson.toJson(productList);
+
+        return Response.status(200).entity(json).build();
 
 
     }
@@ -130,8 +128,18 @@ public class FarmerAccountController {
         SimplePropertyPreFilter filter = new SimplePropertyPreFilter(Product.class, "fspid","name", "note", "start_date", "end_date","price","product_unit","image");
         String res = JSON.toJSONString(product,filter);
 
+        ObjectMapper mapper = new ObjectMapper();
+        mapper.setSerializationInclusion(JsonInclude.Include.NON_DEFAULT);
+        String indented = null;
+        try{
+            Object json = mapper.readValue(res, FarmerAccount.class);
+            indented = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(json);
 
-        return Response.status(200).entity(res).build();
+        }catch (IOException e){
+
+        }
+
+        return Response.status(200).entity(indented).build();
 
 
     }
@@ -195,8 +203,9 @@ public class FarmerAccountController {
     public Response getReports(@PathParam("fid") String fid) {
         FarmerAccount farmerAccount=fam.getFarmerAccountById(fid);// if not find fid, throw DataNotFoundException
         List<ReportFarmer> reportFarmersList= farmerAccount.returnAllKindReports();
-        GenericEntity<List<ReportFarmer>> list = new GenericEntity<List<ReportFarmer>>(reportFarmersList){};
-        return Response.status(200).entity(list).build();
+        Gson gson = new GsonBuilder().setPrettyPrinting().create();
+        String json = gson.toJson(reportFarmersList);
+        return Response.status(200).entity(json).build();
 
 
     }
@@ -209,8 +218,8 @@ public class FarmerAccountController {
         ReportFarmerForDelivey reportFarmerForDelivey = MakeReportFarmerForDelivery.returnReport(fid, frid);
 
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
-        String prettyJson = gson.toJson(reportFarmerForDelivey);
-        return Response.status(200).entity(prettyJson).build();
+        String json = gson.toJson(reportFarmerForDelivey);
+        return Response.status(200).entity(json).build();
 
 
     }

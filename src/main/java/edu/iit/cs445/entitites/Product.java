@@ -1,18 +1,20 @@
 package edu.iit.cs445.entitites;
 
+import com.google.gson.annotations.Expose;
+
 /**
  * Created by YongYang on 11/7/16.
  */
 public class Product {
-    private String fspid;
+    @Expose private String fspid;
     private String gcpid;
-    private String name;
-    private String note;
-    private String start_date;
-    private String end_date;
-    private double price;
-    private String product_unit;
-    private String image;
+    @Expose private String name;
+    @Expose private String note;
+    @Expose private String start_date;
+    @Expose private String end_date;
+    @Expose private double price;
+    @Expose private String product_unit;
+    @Expose private String image;
 
     public Product() {
     }
