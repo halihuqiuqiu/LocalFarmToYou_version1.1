@@ -5,7 +5,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 /**
  * Created by YongYang on 11/7/16.
  */
-@JsonIgnoreProperties(value = { "fid"})
+@JsonIgnoreProperties(value = {"fid"})
 public class Farm {
     private String fid;
     private String name;

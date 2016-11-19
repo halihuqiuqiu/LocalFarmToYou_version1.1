@@ -16,6 +16,10 @@ public class Search {
     public static List<Customer> getCustomersByKey (String key){
         List<Customer> customers = new ArrayList<Customer>();
         List<Customer> customerList = new ArrayList<Customer>(Database.getCustomers().values());
+        if(key.equals("")||key.contains(" ")){
+            return customerList;
+
+        }
         for (Customer customer : customerList){
             String json = JSON.toJSONString(customer);
             if(json.contains(key)){
@@ -23,7 +27,6 @@ public class Search {
             }
 
         }
-
         return  customers;
 
     }

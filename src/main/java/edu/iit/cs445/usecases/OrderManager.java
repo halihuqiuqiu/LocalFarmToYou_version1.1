@@ -28,6 +28,7 @@ public class OrderManager {
         if(customers.get(cid)==null){
             throw new DataNotFoundException();
         }
+        order.setCid(cid);
         FarmerAccount farmerAccount= farmerAccounts.get(order.getFid());
         Farm farm = farmerAccount.getFarm_info();
 

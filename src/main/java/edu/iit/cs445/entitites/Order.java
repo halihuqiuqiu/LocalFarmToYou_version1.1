@@ -11,7 +11,7 @@ import java.util.List;
  * Created by YongYang on 10/3/16.
  */
 
-@JsonIgnoreProperties(value = { "cid","order_by", "delivery_address","note"})
+@JsonIgnoreProperties(value = { "cid","fid","order_by", "delivery_address","note"})
 
 public class Order implements Cloneable {
     private String cid;

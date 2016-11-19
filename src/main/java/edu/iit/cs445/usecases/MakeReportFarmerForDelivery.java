@@ -14,33 +14,33 @@ import java.util.List;
  */
 public class MakeReportFarmerForDelivery {
     public static ReportFarmerForDelivey returnReport(String fid, String frid){
-        ReportFarmerForDelivey reportFarmerForDelivey = new ReportFarmerForDelivey();
+        ReportFarmerForDelivey report = new ReportFarmerForDelivey();
         String deliverDate="";
         CustomerManager cm = new CustomerManager();
 
-        reportFarmerForDelivey.setFrid(frid);
+        report.setFrid(frid);
         if(frid.equals("1")){
-            reportFarmerForDelivey.setName("Orders to deliver today");
+            report.setName("Orders to deliver today");
             deliverDate = HelperDate.getTodayDateyyyyMMdd();
 
         }else if (frid.equals("2")){
-            reportFarmerForDelivey.setName("Orders to deliver tomorrow");
+            report.setName("Orders to deliver tomorrow");
             deliverDate = HelperDate.getTomorrowDateyyyyMMdd();
         }
 
         List<Order> orders = new ArrayList<Order>();
-        List<Order> allOrderList = new ArrayList<Order>(Database.getOrderMap().values());
-        for(Order o: allOrderList){
-            if(o.getFid().equals(fid)&& o.getPlanned_delivery_date().equals(deliverDate)){  //order of this fid and date
-                Order order = new Order();
-                order = (Order)o.clone();
-                order.setCid(null);
-                order.setFid(null);
-                order.setFarm_info(null);
-                order.setDelivery_note(null);
-                order.setNote(o.getDelivery_note());
+        List<Order> orderList = new ArrayList<Order>(Database.getOrderMap().values());
+        for(Order order: orderList){
+            if(order.getFid().equals(fid)&& order.getPlanned_delivery_date().equals(deliverDate)){  //order of this fid and date
+                Order o = new Order();
+                o = (Order)order.clone();
+                o.setCid(null);
+                o.setFid(null);
+                o.setFarm_info(null);
+                o.setNote(o.getDelivery_note());
+                o.setDelivery_note(null);
 
-                Customer customer = cm.getCustomerById(o.getCid());
+                Customer customer = cm.getCustomerById(order.getCid());
                 String address = customer.getStreet() + " " + customer.getZip();
                 order.setDelivery_address(address);
 
@@ -55,8 +55,8 @@ public class MakeReportFarmerForDelivery {
 
         }
 
-        reportFarmerForDelivey.setOrders(orders);
+        report.setOrders(orders);
 
-        return reportFarmerForDelivey;
+        return report;
     }
 }
