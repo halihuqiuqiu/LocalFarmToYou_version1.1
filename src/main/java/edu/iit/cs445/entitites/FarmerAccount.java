@@ -4,7 +4,10 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.google.gson.annotations.Expose;
 import edu.iit.cs445.exception.BadRequestException;
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.security.PublicKey;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -25,7 +28,9 @@ public class FarmerAccount {
 
 
     public FarmerAccount() {
-        this.delivery_charge=0.00;
+        BigDecimal bd = new BigDecimal(0.00).setScale(2,RoundingMode.FLOOR);
+        this.delivery_charge = bd.doubleValue();
+
     }
 
     public FarmerAccount(String name, String fid, Farm farm_info, Farmer personal_info, ArrayList<String> delivers_to, Map<String, Product> productsMap, double delivery_charge, List<ReportFarmer> reportFarmers) {
@@ -88,6 +93,7 @@ public class FarmerAccount {
     }
 
     public double getDelivery_charge() {
+
         return delivery_charge;
     }
 
@@ -95,7 +101,8 @@ public class FarmerAccount {
         if (delivery_charge<0){
             throw new BadRequestException();    //delivery_charge should >=0
         }
-        this.delivery_charge = delivery_charge;
+        BigDecimal bd = new BigDecimal(delivery_charge).setScale(2, RoundingMode.FLOOR);
+        this.delivery_charge = bd.doubleValue();
     }
 
     public List<ReportFarmer> getReportFarmers() {

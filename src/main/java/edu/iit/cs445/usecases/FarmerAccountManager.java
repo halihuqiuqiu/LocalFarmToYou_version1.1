@@ -22,7 +22,7 @@ public class FarmerAccountManager {
 
     public FarmerAccount addFarmerAccount(FarmerAccount farmerAccount) {
         farmerAccount.setFid(String.valueOf(farmerAccounts.size()+1));
-        farmerAccount.setName(farmerAccount.getFarm_info().getName());
+        farmerAccount.setName(farmerAccount.getPersonal_info().getName());
         farmerAccounts.put(farmerAccount.getFid(),farmerAccount);
         return farmerAccount;
     }

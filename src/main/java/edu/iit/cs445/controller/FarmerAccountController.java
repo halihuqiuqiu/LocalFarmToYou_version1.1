@@ -132,7 +132,7 @@ public class FarmerAccountController {
         mapper.setSerializationInclusion(JsonInclude.Include.NON_DEFAULT);
         String indented = null;
         try{
-            Object json = mapper.readValue(res, FarmerAccount.class);
+            Object json = mapper.readValue(res, Product.class);
             indented = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(json);
 
         }catch (IOException e){
@@ -167,7 +167,6 @@ public class FarmerAccountController {
             throw new DataNotFoundException();
         }
 
-
         product.setFspid(fspid);
         fpm.partialUpdateFarmerProduct(fid, product);
         return Response.status(200).build();
@@ -193,6 +192,7 @@ public class FarmerAccountController {
         FarmerAccount farmerAccount=fam.getFarmerAccountById(fid);// if not find fid, throw DataNotFoundException
         SimplePropertyPreFilter filter = new SimplePropertyPreFilter(FarmerAccount.class,"delivery_charge");
         String res = JSON.toJSONString(farmerAccount,filter);
+
         return Response.status(200).entity(res).build();
 
 

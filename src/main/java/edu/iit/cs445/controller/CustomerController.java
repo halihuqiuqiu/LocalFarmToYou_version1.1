@@ -26,7 +26,7 @@ import java.util.List;
  * Created by YongYang on 11/4/16.
  */
 
-@Path("/customer")
+@Path("/customers")
 public class CustomerController {
 
     private CustomerManager cm = new CustomerManager();
