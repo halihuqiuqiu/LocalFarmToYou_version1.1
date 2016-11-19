@@ -15,7 +15,7 @@ public class Order implements Cloneable {
     @Expose private String oid;
     @Expose private String order_date;
     @Expose private String planned_delivery_date;
-    @Expose private String actual_delivery_date;
+    @Expose private String actual_delivery_date = "default";
     @Expose private String status;
     @Expose private String fid;
     private Farm farm_info;

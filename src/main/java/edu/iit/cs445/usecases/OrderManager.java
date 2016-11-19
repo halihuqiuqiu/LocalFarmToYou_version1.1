@@ -65,7 +65,7 @@ public class OrderManager {
         }
 
         order.setProducts_total(totalProduct);
-        order.setDelivery_charge(5.00);
+        order.setDelivery_charge(farmerAccount.getDelivery_charge());
         order.setOrder_total(totalProduct+5.00);
 
 

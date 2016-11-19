@@ -5,6 +5,8 @@ import com.alibaba.fastjson.serializer.SimplePropertyPreFilter;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import edu.iit.cs445.entitites.Customer;
 import edu.iit.cs445.entitites.FarmerAccount;
 import edu.iit.cs445.entitites.Order;
@@ -30,21 +32,11 @@ public class SearchController {
     public Response getAllCustomers(@QueryParam("topic") String topic, @QueryParam("key") String key) {
         if(topic.equals("customer")){
             List<Customer> customerList = Search.getCustomersByKey(key);
-            SimplePropertyPreFilter filter = new SimplePropertyPreFilter(Customer.class, "cid","name","street","zip","phone","email");
-            String res = JSON.toJSONString(customerList, filter);
+            Gson gson = new GsonBuilder().excludeFieldsWithoutExposeAnnotation().setPrettyPrinting().create();
+            String json = gson.toJson(customerList);
 
-            ObjectMapper mapper = new ObjectMapper();
-            mapper.setSerializationInclusion(JsonInclude.Include.NON_DEFAULT);
-            String indented = null;
-            try{
-                Object json = mapper.readValue(res, new TypeReference<List<Customer>>(){});
-                indented = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(json);
 
-            }catch (IOException e){
-
-            }
-
-            return Response.status(200).entity(indented).build();
+            return Response.status(200).entity(json).build();
 
         }
 

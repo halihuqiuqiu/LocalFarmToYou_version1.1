@@ -40,7 +40,7 @@ public class FarmerAccountManager {
         if(farmerAccounts.get(fid)==null){
             throw new DataNotFoundException();
         }
-        farmerAccount.setName(farmerAccount.getFarm_info().getName());
+        farmerAccount.setName(farmerAccount.getPersonal_info().getName());
         farmerAccounts.put(farmerAccount.getFid(), farmerAccount);
         return farmerAccount;
     }

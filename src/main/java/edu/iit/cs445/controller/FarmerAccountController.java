@@ -125,21 +125,11 @@ public class FarmerAccountController {
             throw new DataNotFoundException();
         }
         Product product = fpm.getFarmerProductById(fid, fspid);
-        SimplePropertyPreFilter filter = new SimplePropertyPreFilter(Product.class, "fspid","name", "note", "start_date", "end_date","price","product_unit","image");
-        String res = JSON.toJSONString(product,filter);
 
-        ObjectMapper mapper = new ObjectMapper();
-        mapper.setSerializationInclusion(JsonInclude.Include.NON_DEFAULT);
-        String indented = null;
-        try{
-            Object json = mapper.readValue(res, Product.class);
-            indented = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(json);
+        Gson gson = new GsonBuilder().excludeFieldsWithoutExposeAnnotation().setPrettyPrinting().create();
+        String json = gson.toJson(product);
 
-        }catch (IOException e){
-
-        }
-
-        return Response.status(200).entity(indented).build();
+        return Response.status(200).entity(json).build();
 
 
     }
@@ -219,6 +209,7 @@ public class FarmerAccountController {
 
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
         String json = gson.toJson(reportFarmerForDelivey);
+
         return Response.status(200).entity(json).build();
 
 

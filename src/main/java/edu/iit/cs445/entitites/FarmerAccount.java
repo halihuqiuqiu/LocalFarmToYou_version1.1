@@ -101,8 +101,7 @@ public class FarmerAccount {
         if (delivery_charge<0){
             throw new BadRequestException();    //delivery_charge should >=0
         }
-        BigDecimal bd = new BigDecimal(delivery_charge).setScale(2, RoundingMode.FLOOR);
-        this.delivery_charge = bd.doubleValue();
+        this.delivery_charge = delivery_charge;
     }
 
     public List<ReportFarmer> getReportFarmers() {
