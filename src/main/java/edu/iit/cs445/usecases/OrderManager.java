@@ -55,7 +55,7 @@ public class OrderManager {
             Product product = Database.getProductsMap().get(orderDetail.getFspid());
             orderDetail.setName(product.getName());
             double totalPerProduct = Double.parseDouble(orderDetail.getAmount()) *product.getPrice();
-            totalPerProduct =Double.parseDouble(new DecimalFormat("##.##").format(totalPerProduct));
+            totalPerProduct =Double.parseDouble(new DecimalFormat("##.00").format(totalPerProduct));
 
             orderDetail.setAmount(orderDetail.getAmount()+" " + product.getProduct_unit());
             orderDetail.setPrice(String.valueOf(product.getPrice()) +" per " + product.getProduct_unit());

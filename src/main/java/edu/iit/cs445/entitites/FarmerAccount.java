@@ -30,8 +30,8 @@ public class FarmerAccount {
 
 
     public FarmerAccount() {
-        BigDecimal bd = new BigDecimal(0.00).setScale(2,RoundingMode.FLOOR);
-        this.delivery_charge = bd.doubleValue();
+        this.delivery_charge = Double.parseDouble(new DecimalFormat("##.00").format(0.00));
+
 
     }
 
@@ -95,17 +95,15 @@ public class FarmerAccount {
     }
 
     public double getDelivery_charge() {
-        DecimalFormat df = new DecimalFormat("0.00");
-        Double d = Double.parseDouble(df.format(delivery_charge));
 
-        return d;
+        return Double.parseDouble(new DecimalFormat("##.00").format(delivery_charge));
     }
 
     public void setDelivery_charge(double delivery_charge) {
         if (delivery_charge<0){
             throw new BadRequestException();    //delivery_charge should >=0
         }
-        this.delivery_charge = delivery_charge;
+        this.delivery_charge = Double.parseDouble(new DecimalFormat("##.00").format(delivery_charge));
     }
 
     public List<ReportFarmer> getReportFarmers() {
