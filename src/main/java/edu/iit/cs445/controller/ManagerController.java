@@ -95,8 +95,10 @@ public class ManagerController {
     @Produces(MediaType.APPLICATION_JSON)
     public Response getReports() {
         List<ReportManager> reportList= Manager.returnAllKindReports();
-        GenericEntity<List<ReportManager>> list = new GenericEntity<List<ReportManager>>(reportList){};
-        return Response.status(200).entity(list).build();
+        Gson gson = new GsonBuilder().setPrettyPrinting().create();
+        String prettyJson = gson.toJson(reportList);
+
+        return Response.status(200).entity(prettyJson).build();
 
 
     }

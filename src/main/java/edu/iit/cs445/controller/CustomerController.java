@@ -6,6 +6,9 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.annotations.Expose;
 import edu.iit.cs445.entitites.*;
 import edu.iit.cs445.exception.BadRequestException;
 import edu.iit.cs445.exception.DataNotFoundException;
@@ -34,22 +37,10 @@ public class CustomerController {
     public Response getAllCustomers() {
 
         List<Customer> customerList = cm.getAllCustomers();
-        SimplePropertyPreFilter filter = new SimplePropertyPreFilter(Customer.class, "cid","name","street","zip","phone","email");
-        String res = JSON.toJSONString(customerList, filter);
+        Gson gson = new GsonBuilder().excludeFieldsWithoutExposeAnnotation().setPrettyPrinting().create();
+        String json = gson.toJson(customerList);
 
-        ObjectMapper mapper = new ObjectMapper();
-        mapper.setSerializationInclusion(JsonInclude.Include.NON_DEFAULT);
-        String indented = null;
-        try{
-            Object json = mapper.readValue(res, new TypeReference<List<Customer>>(){});
-            indented = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(json);
-
-        }catch (IOException e){
-
-        }
-
-
-        return Response.status(200).entity(indented).build();
+        return Response.status(200).entity(json).build();
     }
 
 
@@ -58,24 +49,12 @@ public class CustomerController {
     @Produces(MediaType.APPLICATION_JSON)
     public Response getCustomer(@PathParam("cid") String cid) {
         Customer customer = cm.getCustomerById(cid);         // if not find gcpid, throw DataNotFoundException
-        SimplePropertyPreFilter filter = new SimplePropertyPreFilter(Customer.class, "cid","name","stree","zip","phone","email");
-        String res = JSON.toJSONString(customer, filter);
-
-        ObjectMapper mapper = new ObjectMapper();
-        mapper.setSerializationInclusion(JsonInclude.Include.NON_DEFAULT);
-        String indented = null;
-        try{
-            Object json = mapper.readValue(res, Customer.class);
-            indented = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(json);
-
-        }catch (IOException e){
-
-        }
-        return Response.status(200).entity(indented).build();
+        Gson gson = new GsonBuilder().excludeFieldsWithoutExposeAnnotation().setPrettyPrinting().create();
+        String json = gson.toJson(customer);
+        return Response.status(200).entity(json).build();
 
 
     }
-
 
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
@@ -124,9 +103,9 @@ public class CustomerController {
             throw new DataNotFoundException();
         }
         List<Order> orderList = om.getAllCustomerOrders(cid);
-        SimplePropertyPreFilter filter = new SimplePropertyPreFilter(Order.class, "oid", "order_date", "planned_delivery_date", "actual_delivery_date", "status", "fid");
-        String res = JSON.toJSONString(orderList, filter);
-        return Response.status(200).entity(res).build();
+        Gson gson = new GsonBuilder().excludeFieldsWithoutExposeAnnotation().setPrettyPrinting().create();
+        String json = gson.toJson(orderList);
+        return Response.status(200).entity(json).build();
 
 
     }
@@ -136,8 +115,23 @@ public class CustomerController {
     @Produces(MediaType.APPLICATION_JSON)
     public Response getCustomerOrderById(@PathParam("cid") String cid, @PathParam("oid") String oid) {
         Order order = om.getCustomerOrderById(cid, oid);
-        order.setFid(null);
-        return Response.status(200).entity(order).build();
+
+        SimplePropertyPreFilter filter = new SimplePropertyPreFilter(Order.class, "oid", "order_date", "planned_delivery_date","actual_delivery_date",
+                "status","farm_info","order_detail","delivery_note","products_total","delivery_charge","order_total");
+        String res = JSON.toJSONString(order,filter);
+
+        ObjectMapper mapper = new ObjectMapper();
+        mapper.setSerializationInclusion(JsonInclude.Include.NON_DEFAULT);
+        String indented = null;
+        try{
+            Object json = mapper.readValue(res, Order.class);
+            indented = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(json);
+
+        }catch (IOException e){
+
+        }
+
+        return Response.status(200).entity(indented).build();
 
 
     }
@@ -153,8 +147,6 @@ public class CustomerController {
 
 
     }
-
-
 
 
 

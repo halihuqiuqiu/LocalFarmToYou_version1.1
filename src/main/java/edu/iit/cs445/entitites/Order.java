@@ -1,5 +1,7 @@
 package edu.iit.cs445.entitites;
 
+import com.google.gson.annotations.Expose;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -10,12 +12,12 @@ public class Order implements Cloneable {
     private String cid;
     private Customer order_by;
     private String delivery_address;
-    private String oid;
-    private String fid;
-    private String order_date;
-    private String planned_delivery_date;
-    private String actual_delivery_date;
-    private String status;
+    @Expose private String oid;
+    @Expose private String order_date;
+    @Expose private String planned_delivery_date;
+    @Expose private String actual_delivery_date;
+    @Expose private String status;
+    @Expose private String fid;
     private Farm farm_info;
     private List<OrderDetail> order_detail = new ArrayList<OrderDetail>();
     private String delivery_note;

@@ -1,6 +1,7 @@
 package edu.iit.cs445.entitites;
 
 
+import com.google.gson.annotations.Expose;
 import edu.iit.cs445.exception.BadRequestException;
 
 import java.util.HashMap;
@@ -11,12 +12,12 @@ import java.util.Map;
  */
 
 public class Customer implements Cloneable{
-    private String cid;
-    private String name;
-    private String street;
-    private String zip;
-    private String phone;
-    private String email;
+    @Expose private String cid;
+    @Expose private String name;
+    @Expose private String street;
+    @Expose private String zip;
+    @Expose private String phone;
+    @Expose private String email;
     private Map<String,Order> orderMap = new HashMap<String, Order>();
 
     public Customer(){
