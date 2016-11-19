@@ -40,35 +40,29 @@ public class SearchController {
 
         }
 
-        if(topic.equals("farm")){
+        else if(topic.equals("farm")){
             List<FarmerAccount> farmerAccountList = Search.getFarmerAccountsByKey(key);
-            SimplePropertyPreFilter filter = new SimplePropertyPreFilter(FarmerAccount.class, "fid", "farm_info", "delivers_to","personal_info");
-            String res = JSON.toJSONString(farmerAccountList, filter);
-
             ObjectMapper mapper = new ObjectMapper();
-            mapper.setSerializationInclusion(JsonInclude.Include.NON_DEFAULT);
-            String indented = null;
+
+            String json=null;
             try{
-                Object json = mapper.readValue(res, new TypeReference<List<FarmerAccount>>(){});
-                indented = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(json);
+                json = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(farmerAccountList);
 
             }catch (IOException e){
 
             }
 
-            return Response.status(200).entity(indented).build();
+            return Response.status(200).entity(json).build();
 
         }
 
-        if(topic.equals("order")){
+        else if(topic.equals("order")){
             List<Order> orderList = Search.getOrdersByKey(key);
 
             ObjectMapper mapper = new ObjectMapper();
-            mapper.setSerializationInclusion(JsonInclude.Include.NON_DEFAULT);
             String indented = null;
             try{
-                Object json = mapper.writeValueAsString(orderList);
-                indented = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(json);
+                indented = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(orderList);
 
             }catch (IOException e){
 
@@ -76,9 +70,11 @@ public class SearchController {
 
             return Response.status(200).entity(indented).build();
 
+        }else {
+            throw new BadRequestException();  // wrong topic
+
         }
 
 
-        throw new BadRequestException();  // wrong topic
     }
 }

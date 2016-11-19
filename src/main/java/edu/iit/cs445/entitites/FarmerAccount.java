@@ -1,5 +1,6 @@
 package edu.iit.cs445.entitites;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.google.gson.annotations.Expose;
 import edu.iit.cs445.exception.BadRequestException;
@@ -16,6 +17,7 @@ import java.util.Map;
 /**
  * Created by YongYang on 10/3/16.
  */
+@JsonIgnoreProperties(value = { "naem","productsMap", "delivery_charge","reportFarmers"})
 public class FarmerAccount {
     @Expose private String fid;
     @Expose private String name;
@@ -93,8 +95,10 @@ public class FarmerAccount {
     }
 
     public double getDelivery_charge() {
+        DecimalFormat formatter = new DecimalFormat("0.00");
+        String aFormatted = formatter.format(delivery_charge);
 
-        return delivery_charge;
+        return Double.valueOf(aFormatted);
     }
 
     public void setDelivery_charge(double delivery_charge) {

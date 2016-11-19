@@ -35,22 +35,16 @@ public class FarmerAccountController {
     public Response getFarmerAccount(@PathParam("fid") String fid) {
 
         FarmerAccount farmerAccount = fam.getFarmerAccountById(fid); // if not find fid, throw DataNotFoundException
-        SimplePropertyPreFilter filter = new SimplePropertyPreFilter(FarmerAccount.class, "fid", "farm_info", "delivers_to","personal_info");
-        String res = JSON.toJSONString(farmerAccount,filter);
-
         ObjectMapper mapper = new ObjectMapper();
-        mapper.setSerializationInclusion(JsonInclude.Include.NON_DEFAULT);
-        String indented = null;
+
+        String json=null;
         try{
-            Object json = mapper.readValue(res, FarmerAccount.class);
-            indented = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(json);
+            json = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(farmerAccount);
 
         }catch (IOException e){
 
         }
-
-        return Response.status(200).entity(indented).build();
-
+        return Response.status(200).entity(json).build();
 
     }
 

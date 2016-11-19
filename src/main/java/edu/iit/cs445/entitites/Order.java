@@ -1,5 +1,6 @@
 package edu.iit.cs445.entitites;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.google.gson.annotations.Expose;
 
 import java.util.ArrayList;
@@ -8,6 +9,9 @@ import java.util.List;
 /**
  * Created by YongYang on 10/3/16.
  */
+
+@JsonIgnoreProperties(value = { "cid","order_by", "delivery_address","note"})
+
 public class Order implements Cloneable {
     private String cid;
     private Customer order_by;
@@ -15,7 +19,7 @@ public class Order implements Cloneable {
     @Expose private String oid;
     @Expose private String order_date;
     @Expose private String planned_delivery_date;
-    @Expose private String actual_delivery_date = "default";
+    @Expose private String actual_delivery_date;
     @Expose private String status;
     @Expose private String fid;
     private Farm farm_info;
@@ -27,6 +31,7 @@ public class Order implements Cloneable {
     private double order_total;
 
     public Order() {
+
     }
 
     public Order(String cid, Customer order_by, String delivery_address, String oid, String fid, String order_date, String planned_delivery_date, String actual_delivery_date, String status, Farm farm_info, List<OrderDetail> order_detail, String delivery_note, String note, double products_total, double delivery_charge, double order_total) {

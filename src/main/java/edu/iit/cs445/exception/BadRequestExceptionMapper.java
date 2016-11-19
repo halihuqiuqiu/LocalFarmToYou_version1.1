@@ -12,6 +12,6 @@ import javax.ws.rs.ext.Provider;
 @Provider
 public class BadRequestExceptionMapper implements ExceptionMapper<BadRequestException> {
     public Response toResponse(BadRequestException e) {
-        return Response.status(400).entity(new NullObject()).build();
+        return Response.status(400).entity(e.getMessage()).build();
     }
 }

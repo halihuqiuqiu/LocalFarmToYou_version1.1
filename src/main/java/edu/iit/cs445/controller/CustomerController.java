@@ -116,22 +116,17 @@ public class CustomerController {
     public Response getCustomerOrderById(@PathParam("cid") String cid, @PathParam("oid") String oid) {
         Order order = om.getCustomerOrderById(cid, oid);
 
-        SimplePropertyPreFilter filter = new SimplePropertyPreFilter(Order.class, "oid", "order_date", "planned_delivery_date","actual_delivery_date",
-                "status","farm_info","order_detail","delivery_note","products_total","delivery_charge","order_total");
-        String res = JSON.toJSONString(order,filter);
-
         ObjectMapper mapper = new ObjectMapper();
-        mapper.setSerializationInclusion(JsonInclude.Include.NON_DEFAULT);
-        String indented = null;
+        String json = null;
         try{
-            Object json = mapper.readValue(res, Order.class);
-            indented = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(json);
+
+            json = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(order);
 
         }catch (IOException e){
 
         }
 
-        return Response.status(200).entity(indented).build();
+        return Response.status(200).entity(json).build();
 
 
     }

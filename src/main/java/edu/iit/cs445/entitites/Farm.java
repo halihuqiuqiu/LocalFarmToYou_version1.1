@@ -8,7 +8,7 @@ public class Farm {
     private String name;
     private String address;
     private String phone;
-    private String web;
+    private String web="default";
 
     public Farm() {
     }
