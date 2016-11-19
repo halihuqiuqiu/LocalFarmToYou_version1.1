@@ -1,5 +1,6 @@
 package edu.iit.cs445.entitites;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.google.gson.annotations.Expose;
 
@@ -8,12 +9,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by YongYang on 10/3/16.
+ * Created by YongYang on 10/3/16. "cid","order_by", "delivery_address","farm_info","order_detail", "note","delivery_note"，"products_total" ,"delivery_charge", "order_total"
  */
-
-@JsonIgnoreProperties(value = { "cid","order_by", "delivery_address","farm_info","order_detail",
-        "note","products_total" ,"delivery_charge", "order_total"})
-
+@JsonIgnoreProperties(value ={"cid","order_by", "delivery_address","farm_info",
+        "order_detail", "note","delivery_note","products_total" ,"delivery_charge", "order_total"})
 public class Order implements Cloneable {
     @Expose private String oid;
     private String cid;

@@ -1,16 +1,18 @@
 package edu.iit.cs445.entitites;
 
+import com.google.gson.annotations.Expose;
+
 import java.text.DecimalFormat;
 
 /**
  * Created by YongYang on 11/17/16.
  */
 public class OrderDetail {
-    private String fspid;
-    private String name;
-    private String amount;
-    private String price;
-    private double line_item_total;
+    @Expose private String fspid;
+    @Expose private String name;
+    @Expose private String amount;
+    @Expose private String price;
+    @Expose private double line_item_total;
 
     public OrderDetail() {
     }

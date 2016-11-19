@@ -1,17 +1,18 @@
 package edu.iit.cs445.entitites;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.google.gson.annotations.Expose;
 
 /**
  * Created by YongYang on 11/7/16.
  */
 @JsonIgnoreProperties(value = {"fid"})
 public class Farm {
-    private String fid;
-    private String name;
-    private String address;
-    private String phone;
-    private String web;
+    @Expose private String fid;
+    @Expose private String name;
+    @Expose private String address;
+    @Expose private String phone;
+    @Expose private String web;
 
     public Farm() {
     }
