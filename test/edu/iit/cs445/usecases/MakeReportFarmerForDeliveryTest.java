@@ -88,8 +88,15 @@ public class MakeReportFarmerForDeliveryTest {
         order1.setOrder_detail(new ArrayList<OrderDetail>(Arrays.asList(orderDetail1,orderDetail2)));
         order2.setOrder_detail(new ArrayList<OrderDetail>(Arrays.asList(orderDetail3)));
 
+
+        order1.setFid("1");
+        order2.setFid("1");
+
+
         om.addCustomerOrder("1",order1);
         om.addCustomerOrder("1",order2);
+
+
 
     }
     @Test
@@ -99,6 +106,7 @@ public class MakeReportFarmerForDeliveryTest {
         assertEquals("Orders to deliver today",report.getName());
 
     }
+
 
 
 }

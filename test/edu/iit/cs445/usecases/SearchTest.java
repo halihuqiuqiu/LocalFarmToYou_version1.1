@@ -95,6 +95,9 @@ public class SearchTest {
     @Test
     public void getCustomersByKey() throws Exception {
 
+        List<Customer> customerList1 = Search.getCustomersByKey("");
+        assertEquals(Database.getCustomers().size(),customerList1.size());
+
         List<Customer> customerList2 = Search.getCustomersByKey("something");
         assertEquals(0,customerList2.size());
 
@@ -104,6 +107,9 @@ public class SearchTest {
 
     @Test
     public void getFarmerAccountsByKey() throws Exception {
+
+        List<FarmerAccount> farmerAccountList1 = Search.getFarmerAccountsByKey("");
+        assertEquals(Database.getFarmerAccounts().size(),farmerAccountList1.size());
 
         List<FarmerAccount> farmerAccountList2 = Search.getFarmerAccountsByKey("something");
         assertEquals(0,farmerAccountList2.size());
