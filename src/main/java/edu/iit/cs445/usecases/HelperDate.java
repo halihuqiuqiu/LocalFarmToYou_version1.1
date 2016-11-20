@@ -23,10 +23,4 @@ public class HelperDate {
 
     }
 
-    /*
-    public static void main(String[] args) {
-        System.out.println(getTodayDateyyyyMMdd());
-        System.out.println(getTomorrowDateyyyyMMdd());
-    }
-    */
 }

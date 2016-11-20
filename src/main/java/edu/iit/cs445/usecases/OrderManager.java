@@ -92,7 +92,7 @@ public class OrderManager {
         }
         if(order.getStatus().equals("cancelled")){
             getCustomerOrderById(cid, oid).setStatus("cancelled");
-            Database.getOrderMap().get(oid).setStatus("delivered");
+            Database.getOrderMap().get(oid).setStatus("cancelled");
         }
     }
 

@@ -15,7 +15,7 @@ import java.util.List;
 public class Hello {
     @GET
     @Produces(MediaType.TEXT_PLAIN)
-    public String getAllCustomers(){
+    public String sayHello(){
         return "hellllllooooooo";
     }
 }

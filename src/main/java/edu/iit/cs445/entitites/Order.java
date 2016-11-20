@@ -13,7 +13,7 @@ import java.util.List;
  */
 @JsonIgnoreProperties(value ={"cid","order_by", "delivery_address","farm_info",
         "order_detail", "note","delivery_note","products_total" ,"delivery_charge", "order_total"})
-public class Order implements Cloneable {
+public class Order {
     @Expose private String oid;
     private String cid;
     @Expose private String order_date;
@@ -54,16 +54,6 @@ public class Order implements Cloneable {
         this.order_total = order_total;
     }
 
-    @Override
-    public Object clone() {
-        Order order = null;
-        try{
-            order =(Order) super.clone();
-        }catch (CloneNotSupportedException e){
-
-        }
-        return order;
-    }
 
     public String getCid() {
         return cid;

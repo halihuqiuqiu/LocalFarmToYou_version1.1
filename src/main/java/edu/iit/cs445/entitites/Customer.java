@@ -11,7 +11,7 @@ import java.util.Map;
  * Created by YongYang on 11/4/16.
  */
 
-public class Customer implements Cloneable{
+public class Customer{
     @Expose private String cid;
     @Expose private String name;
     @Expose private String street;
@@ -33,17 +33,6 @@ public class Customer implements Cloneable{
         this.orderMap = orderMap;
     }
 
-
-    @Override
-    public Object clone() {
-        Customer customer = null;
-        try{
-            customer =(Customer)super.clone();
-        }catch (CloneNotSupportedException e){
-
-        }
-        return customer;
-    }
 
     public String getCid() {
         return cid;

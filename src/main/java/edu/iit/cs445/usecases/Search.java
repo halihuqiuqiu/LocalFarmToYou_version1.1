@@ -34,6 +34,10 @@ public class Search {
     public static List<FarmerAccount> getFarmerAccountsByKey (String key){
         List<FarmerAccount> farmerAccounts = new ArrayList<FarmerAccount>();
         List<FarmerAccount> farmerAccountList = new ArrayList<FarmerAccount>(Database.getFarmerAccounts().values());
+        if(key.equals("")||key.equals(" ")){
+            return farmerAccountList;
+
+        }
         for (FarmerAccount farmerAccount : farmerAccountList){
             String json = JSON.toJSONString(farmerAccount);
             if(json.contains(key)){
@@ -48,6 +52,10 @@ public class Search {
     public static List<Order> getOrdersByKey (String key){
         List<Order> orders = new ArrayList<Order>();
         List<Order> orderList = new ArrayList<Order>(Database.getOrderMap().values());
+        if(key.equals("")||key.equals(" ")){
+            return orderList;
+
+        }
         for (Order order : orderList){
             String json = JSON.toJSONString(order);
             if(json.contains(key)){

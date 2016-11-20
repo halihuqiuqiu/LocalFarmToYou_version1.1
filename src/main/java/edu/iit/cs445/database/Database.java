@@ -16,8 +16,29 @@ public class Database {
     private static Map<String, Product> productsMap = new HashMap<String, Product>();
     private static Map<String, Order> orderMap = new HashMap<String, Order>();
 
+    public static void setCustomers(Map<String, Customer> customers) {
+        Database.customers = customers;
+    }
 
+    public static void setCatalogs(Map<String, Catalog> catalogs) {
+        Database.catalogs = catalogs;
+    }
 
+    public static void setFarmerAccounts(Map<String, FarmerAccount> farmerAccounts) {
+        Database.farmerAccounts = farmerAccounts;
+    }
+
+    public static void setManagerMap(Map<String, Manager> managerMap) {
+        Database.managerMap = managerMap;
+    }
+
+    public static void setProductsMap(Map<String, Product> productsMap) {
+        Database.productsMap = productsMap;
+    }
+
+    public static void setOrderMap(Map<String, Order> orderMap) {
+        Database.orderMap = orderMap;
+    }
 
     public static Map<String, Customer> getCustomers() {
         return customers;
